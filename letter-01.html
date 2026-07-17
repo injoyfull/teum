@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F5F1EA">
+<title>틈 · No.01 — 오늘, 초록을 본 적이 있나요?</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;900&family=Noto+Sans+KR:wght@300;400;500;700&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:#F5F1EA; --ink:#1A1817; --ink-soft:#3B3733; --mute:#8A847A;
+    --green:#3B6B4A;
+    /* 여름 — 블루 & 네온 그린 */
+    --blue:#0E6AB4; --blue-deep:#0A5391; --neon:#D9F73F;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    background:var(--paper); color:var(--ink);
+    font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo',sans-serif;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  .serif { font-family:'Noto Serif KR','Nanum Myeongjo',serif; }
+  .hand  { font-family:'Gaegu','Noto Sans KR',cursive; }
+
+  .page { max-width:760px; margin:0 auto; padding:40px 24px 0; }
+
+  /* ── 표지 ── */
+  .cover {
+    position:relative; width:100%; aspect-ratio:5/6.2; background:var(--blue);
+    border-radius:6px; overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(14,60,100,.5);
+  }
+  /* 표지 사진 — 그 위에 손그림 낙서가 얹힌다 (WONDER 구조) */
+  .cover-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  /* 사진을 블루 필드에 녹인다 — 사진이 없어도 블루가 표지를 채운다 */
+  .cover-photo { mix-blend-mode:luminosity; opacity:.85; }
+  .cover-scrim {
+    position:absolute; inset:0; pointer-events:none;
+    background:
+      linear-gradient(to bottom, rgba(10,83,145,.55) 0%, rgba(14,106,180,.10) 26%),
+      linear-gradient(to top,    rgba(10,83,145,.65) 0%, rgba(14,106,180,.08) 38%);
+  }
+  .cover-art { position:absolute; inset:0; width:100%; height:100%; }
+  /* 네온 그린 대문자 — 표지를 가로지르는 주인공 */
+  .ghost {
+    position:absolute; top:7%; left:-2%; right:-2%; text-align:center;
+    font-family:'Noto Sans KR',sans-serif; font-weight:900;
+    font-size:clamp(120px,30vw,260px); line-height:.82;
+    color:var(--neon); letter-spacing:-.03em; pointer-events:none;
+  }
+  .cover-top {
+    position:absolute; top:20px; left:22px; right:22px;
+    display:flex; justify-content:space-between; align-items:flex-start;
+    font-size:12px; letter-spacing:.12em; color:#FFF; font-weight:500;
+  }
+  .cover-top .mast { font-family:'Noto Serif KR',serif; font-weight:600; }
+  .cover-title {
+    position:absolute; left:22px; bottom:74px; right:22px;
+    font-family:'Noto Serif KR',serif; font-weight:600;
+    font-size:clamp(26px,6vw,40px); line-height:1.32; color:#FFF; word-break:keep-all;
+    text-shadow:0 2px 18px rgba(8,60,105,.5);
+  }
+  .cover-foot {
+    position:absolute; left:22px; bottom:22px; right:22px;
+    display:flex; justify-content:space-between; align-items:flex-end;
+    font-size:12px; color:#FFF;
+  }
+  .cover-foot .no {
+    font-family:'Gaegu',cursive; font-weight:700; font-size:22px; line-height:1;
+    color:var(--neon);
+  }
+
+  /* ── 본문 ── */
+  article { padding:64px 0 0; }
+  .kicker { font-family:'Gaegu',cursive; font-weight:700; font-size:17px; color:var(--green); margin-bottom:14px; }
+  .lead {
+    font-family:'Noto Serif KR',serif; font-weight:600; font-size:clamp(24px,5vw,32px);
+    line-height:1.5; word-break:keep-all; margin-bottom:36px;
+  }
+  article p.body {
+    font-family:'Noto Serif KR',serif; font-weight:300; font-size:17px; line-height:2.1;
+    color:var(--ink-soft); word-break:keep-all; margin:0 0 26px;
+  }
+  article p.body b { font-weight:600; color:var(--ink); }
+  h3.sub {
+    font-family:'Noto Serif KR',serif; font-weight:600; font-size:21px; line-height:1.5;
+    margin:14px 0 16px; word-break:keep-all;
+  }
+  .sign { font-family:'Gaegu',cursive; font-weight:700; font-size:18px; color:var(--mute); margin-top:8px; }
+
+  .divider { display:flex; justify-content:center; gap:10px; margin:44px 0; }
+  .divider svg { width:52px; height:34px; overflow:visible; }
+
+  .rx {
+    position:relative; margin:40px 0; padding:30px 26px 30px;
+    background:#EAF0E4; border-radius:14px; overflow:hidden;
+  }
+  .rx .no { font-family:'Gaegu',cursive; font-weight:700; font-size:40px; color:var(--green); line-height:1; }
+  .rx .tag { font-family:'Gaegu',cursive; font-weight:700; font-size:15px; color:var(--green); letter-spacing:.05em; margin:6px 0 8px; }
+  .rx h4 { font-family:'Noto Serif KR',serif; font-weight:600; font-size:21px; margin-bottom:12px; word-break:keep-all; }
+  .rx p { font-size:15px; line-height:1.95; color:var(--ink-soft); word-break:keep-all; }
+  .rx p b { color:var(--green); font-weight:500; }
+  .rx .doodle { position:absolute; right:14px; top:14px; width:70px; height:70px; overflow:visible; opacity:.9; }
+
+  .invite {
+    margin:40px 0; padding:24px 24px; border:2px dashed #C9C3B5; border-radius:14px;
+    font-size:15px; line-height:1.9; color:var(--ink-soft); word-break:keep-all;
+  }
+  .invite b { color:var(--ink); font-weight:500; }
+
+  .closing { margin:56px 0 0; text-align:center; }
+  .closing p { font-family:'Noto Serif KR',serif; font-weight:600; font-size:clamp(22px,5vw,28px); line-height:1.6; word-break:keep-all; }
+  .closing .em { color:var(--green); }
+
+  footer {
+    margin-top:64px; padding:26px 0 60px; border-top:1px solid #DAD4C7;
+    font-size:12px; line-height:1.9; color:var(--mute);
+  }
+  footer a { color:var(--mute); }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ─────────── 표지 ─────────── -->
+  <section class="cover">
+    <img class="cover-photo" src="assets/cover-01-photo.jpg"
+         alt="초점이 풀린 빛망울과 초록빛 번짐. 보고 있었지만 보지 못한 것들."
+         onerror="this.style.display='none'">
+    <div class="cover-scrim"></div>
+    <svg class="cover-art" viewBox="0 0 1000 1240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <filter id="crayon" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="7" result="n"/>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+      </defs>
+      <g id="art" filter="url(#crayon)"></g>
+    </svg>
+
+    <div class="ghost">초록</div>
+    <div class="cover-top">
+      <span class="mast">틈 <span style="color:#8A847A; font-weight:300; margin:0 4px;">|</span> 숨과 쉼 사이</span>
+      <span>Vol. 01 · 시각 편</span>
+    </div>
+    <div class="cover-title serif">오늘, 초록을<br>본 적이 있나요?</div>
+    <div class="cover-foot">
+      <span>2026 · 2주에 한 번의 안부</span>
+      <span class="no">No.01</span>
+    </div>
+  </section>
+
+  <!-- ─────────── 본문 ─────────── -->
+  <article>
+    <p class="kicker">이번 호의 감각 — 시각</p>
+    <p class="lead serif">하루 종일 무언가를 보고 있었는데,<br>정작 눈이 쉰 순간은 없었습니다.</p>
+
+    <p class="body">
+      모니터, 손안의 화면, 신호등, 또 화면. 눈은 쉬지 않고 움직였는데,
+      정작 눈이 쉬었던 순간은 없었습니다. 그래서 요즘 저는 스스로에게 이런 질문을 던집니다.
+      <b>오늘, 초록을 본 적이 있는가.</b> 거창한 질문이 아닙니다.
+      그저 오늘 하루, 초록빛 무언가에 시선이 잠시 머물렀는가를 묻는 것뿐입니다.
+    </p>
+
+    <div class="divider" data-doodle="sprouts"></div>
+
+    <h3 class="sub serif">애쓰지 않아도 되는 색</h3>
+    <p class="body">
+      초록은 이상한 색입니다. 화려하지 않은데 마음을 끕니다. 서두르지 않는데 눈이 자꾸 그리로 갑니다.
+      아마도 초록이 무언가를 증명하려 하지 않기 때문일 겁니다. 나무는 오늘 더 잘 보이려고 애쓰지 않습니다.
+      그저 거기, 어제와 같은 자리에 서 있을 뿐입니다. 그 무심함이 오히려 쉼이 됩니다.
+    </p>
+    <p class="body">
+      어쩌면 우리는 오랫동안 무언가를 증명하며 살아왔는지도 모릅니다. 일에서, 관계에서, 심지어 쉬는 방식에서조차.
+      그래서 아무것도 증명하지 않는 존재 앞에 서면, 이상하게 마음이 놓입니다.
+    </p>
+
+    <div class="divider" data-doodle="sparks"></div>
+
+    <h3 class="sub serif">회복은 결심이 아니라, 스며드는 것</h3>
+    <p class="body">
+      사람들은 종종 힐링을 찾아 멀리 떠납니다. 저는 그것이 조금 아쉽습니다.
+      회복이라는 건 대단한 결심 끝에 오는 것이 아니라, 오히려 일상의 틈 속에서 조용히 스며드는 것이라고 믿기 때문입니다.
+    </p>
+    <p class="body">
+      바쁘다는 이유로 지나쳤던 것들은, 대개 사라진 게 아니라 그 자리에 그대로 있습니다.
+      우리가 잠시 눈을 돌리지 않았을 뿐이지요. 회사 앞 화단, 하천을 따라 심긴 나무들, 창밖 이웃집 화분 하나.
+      그 초록은 오늘도, 우리가 보지 않는 사이 제자리에서 짙어지고 있습니다.
+    </p>
+    <p class="sign hand">— 에디터 드림</p>
+
+    <!-- 처방 -->
+    <div class="rx">
+      <svg class="doodle" viewBox="0 0 100 100" data-doodle="rx" aria-hidden="true"></svg>
+      <div class="no">01</div>
+      <div class="tag">이번 호의 감각 처방 · 시각</div>
+      <h4 class="serif">오늘, 5분만 초록을 봅니다</h4>
+      <p>
+        출근길, 지도가 알려주는 가장 빠른 길 대신 나무가 있는 길로 한 블록 돌아가 보세요.
+        혹은 점심 후 벤치에 앉아, 나뭇잎이 흔들리는 걸 그저 바라보세요.
+        사진을 찍을 필요도, 기록할 필요도 없습니다. <b>본다는 행위, 그 자체로 충분합니다.</b>
+      </p>
+    </div>
+
+    <div class="invite">
+      오늘 어디서 초록을 만나셨나요? 이 편지에 그냥 <b>답장</b>해 주세요.
+      당신이 멈춰 섰던 그 초록이, 다음 편지의 <b>‘어느 독자의 감각’</b>에 익명으로 실립니다.
+    </div>
+
+    <div class="closing">
+      <p class="serif">오늘, 초록을 본 적이 있나요?<br><span class="em">그것으로, 충분합니다.</span></p>
+    </div>
+
+    <footer>
+      틈 — 숨과 쉼 사이의 편지 · No.01 시각 편<br>
+      다음 편지 — 촉각 편 · 마지막으로 나무껍질을 만져본 게 언제인가요?<br>
+      문의 · <a href="#">hello@teum.letter</a> (준비 중)
+    </footer>
+  </article>
+</div>
+
+<script>
+  const NS = 'http://www.w3.org/2000/svg';
+  function E(t, a) { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); return e; }
+  function P(parent, d, stroke, w, fill) {
+    parent.appendChild(E('path', { d, fill: fill || 'none', stroke, 'stroke-width': w, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }));
+  }
+
+  // ── 손그림 낙서 사전 ──
+  function heart(g, x, y, s, c) {
+    P(g, `M ${x},${y+0.30*s} C ${x-0.55*s},${y-0.30*s} ${x-1.05*s},${y+0.10*s} ${x},${y+0.92*s} C ${x+1.05*s},${y+0.10*s} ${x+0.55*s},${y-0.30*s} ${x},${y+0.30*s} Z`, c, 4.5);
+  }
+  function spark(g, x, y, s, c) {
+    const k = s * 0.26;
+    P(g, `M ${x},${y-s} C ${x+k},${y-k} ${x+k},${y-k} ${x+s},${y} C ${x+k},${y+k} ${x+k},${y+k} ${x},${y+s} C ${x-k},${y+k} ${x-k},${y+k} ${x-s},${y} C ${x-k},${y-k} ${x-k},${y-k} ${x},${y-s} Z`, c, 3.5);
+  }
+  function asterisk(g, x, y, s, c) {
+    for (let i = 0; i < 3; i++) { const a = i * Math.PI / 3; P(g, `M ${x-Math.cos(a)*s},${y-Math.sin(a)*s} L ${x+Math.cos(a)*s},${y+Math.sin(a)*s}`, c, 3.5); }
+  }
+  function sprout(g, x, y, s, c) {   // 새싹 — 잎 두 장 + 줄기
+    P(g, `M ${x},${y} C ${x},${y-s*0.7} ${x},${y-s*0.9} ${x},${y-s*1.15}`, c, 3);
+    P(g, `M ${x},${y-s*0.55} C ${x-s*0.5},${y-s*0.5} ${x-s*0.62},${y-s*0.95} ${x-s*0.15},${y-s*1.0}`, c, 3.5);
+    P(g, `M ${x},${y-s*0.75} C ${x+s*0.5},${y-s*0.7} ${x+s*0.62},${y-s*1.15} ${x+s*0.15},${y-s*1.2}`, c, 3.5);
+  }
+  function grass(g, x, y, s, c) {    // 풀 세 줄기
+    P(g, `M ${x},${y} C ${x-s*0.15},${y-s*0.6} ${x-s*0.5},${y-s*0.8} ${x-s*0.6},${y-s*1.05}`, c, 3);
+    P(g, `M ${x},${y} C ${x},${y-s*0.7} ${x},${y-s*0.9} ${x},${y-s*1.25}`, c, 3);
+    P(g, `M ${x},${y} C ${x+s*0.15},${y-s*0.6} ${x+s*0.5},${y-s*0.8} ${x+s*0.6},${y-s*1.05}`, c, 3);
+  }
+  function flower(g, x, y, s, c, cc) {
+    for (let i = 0; i < 5; i++) {
+      const a = i * (2 * Math.PI / 5) - Math.PI / 2;
+      const px = x + Math.cos(a) * s, py = y + Math.sin(a) * s;
+      P(g, `M ${x},${y} C ${x+Math.cos(a-0.5)*s},${y+Math.sin(a-0.5)*s} ${px+Math.cos(a-0.5)*s*0.4},${py+Math.sin(a-0.5)*s*0.4} ${px},${py} C ${px+Math.cos(a+0.5)*s*0.4},${py+Math.sin(a+0.5)*s*0.4} ${x+Math.cos(a+0.5)*s},${y+Math.sin(a+0.5)*s} ${x},${y} Z`, c, 3);
+    }
+    g.appendChild(E('circle', { cx: x, cy: y, r: s * 0.22, fill: cc || c }));
+  }
+  function sun(g, x, y, s, c) {
+    g.appendChild(E('circle', { cx: x, cy: y, r: s * 0.5, fill: 'none', stroke: c, 'stroke-width': 3.5 }));
+    for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4; P(g, `M ${x+Math.cos(a)*s*0.72},${y+Math.sin(a)*s*0.72} L ${x+Math.cos(a)*s},${y+Math.sin(a)*s}`, c, 3); }
+  }
+  function note(g, x, y, s, c) {
+    g.appendChild(E('ellipse', { cx: x, cy: y + s, rx: s * 0.42, ry: s * 0.3, fill: c, transform: `rotate(-20 ${x} ${y+s})` }));
+    P(g, `M ${x+s*0.38},${y+s} L ${x+s*0.38},${y-s*0.9}`, c, 3.5);
+    P(g, `M ${x+s*0.38},${y-s*0.9} C ${x+s*0.9},${y-s*0.7} ${x+s*0.9},${y-s*0.2} ${x+s*0.5},${y-s*0.1}`, c, 3.5);
+  }
+  function squiggle(g, x, y, s, c) {
+    P(g, `M ${x},${y} C ${x+s*0.4},${y-s*0.5} ${x+s*0.7},${y+s*0.5} ${x+s},${y} C ${x+s*1.3},${y-s*0.5} ${x+s*1.6},${y+s*0.5} ${x+s*2},${y}`, c, 3.5);
+  }
+  function dot(g, x, y, r, c) { g.appendChild(E('circle', { cx: x, cy: y, r, fill: c })); }
+
+  function leaf(g, x, y, ang, len, c) {
+    const gg = E('g', { transform: `translate(${x},${y}) rotate(${ang})` });
+    const w = len * 0.4;
+    P(gg, `M 0,0 C ${w},${-len*0.35} ${w},${-len*0.78} 0,${-len} C ${-w},${-len*0.78} ${-w},${-len*0.35} 0,0 Z`, c, 3.5);
+    P(gg, `M 0,-6 L 0,${-len*0.92}`, c, 2.2);
+    g.appendChild(gg);
+  }
+
+  // ── 표지 아트 ──
+  (function () {
+    const art = document.getElementById('art');
+    // 블루 위에서 튀는 색 — 네온 그린 · 화이트 · 여름 포인트
+    const C = { green:'#D9F73F', dgreen:'#B6E02A', teal:'#7FE3C2', coral:'#FF7A4D', red:'#FF5C7A',
+                orange:'#FFB03A', gold:'#FFE45C', blue:'#8FD3FF', pink:'#FF8FC7', ink:'#FFFFFF' };
+
+    // 사진이 주인공 — 그 위에 흩뿌린 낙서만
+    heart(art, 705, 300, 40, C.coral);
+    heart(art, 810, 320, 34, C.gold);
+    heart(art, 905, 292, 30, C.red);
+    spark(art, 300, 340, 26, C.blue);
+    spark(art, 660, 560, 20, C.teal);
+    asterisk(art, 250, 520, 26, C.gold);
+    asterisk(art, 840, 560, 24, C.coral);
+    asterisk(art, 150, 760, 20, C.blue);
+    note(art, 300, 470, 40, C.red);
+    sun(art, 165, 430, 34, C.gold);
+    flower(art, 250, 690, 30, C.coral, C.gold);
+    flower(art, 800, 700, 30, C.gold, C.coral);
+    flower(art, 170, 900, 26, C.red, C.gold);
+    grass(art, 360, 1040, 46, C.green);
+    grass(art, 300, 1090, 40, C.teal);
+    sprout(art, 690, 1050, 40, C.green);
+    sprout(art, 760, 1095, 34, C.dgreen);
+    grass(art, 620, 1075, 42, C.green);
+    squiggle(art, 560, 800, 46, C.blue);
+    // 작은 점들
+    [[420,300,C.blue],[560,300,C.gold],[880,420,C.teal],[210,620,C.coral],[720,640,C.gold],[120,540,C.pink],[860,820,C.blue],[500,560,C.pink]].forEach(([x,y,c]) => dot(art, x, y, 7, c));
+  })();
+
+  // ── 본문 구분선 / 처방 낙서 ──
+  function fillDivider(el, kind) {
+    const s = E('svg', { viewBox: '0 0 160 40' }); s.setAttribute('width', '160'); s.setAttribute('height', '40'); s.style.overflow = 'visible';
+    const g = E('g', {}); s.appendChild(g);
+    const C = ['#4E9A54', '#3F9E86', '#E0573A', '#E7C13E', '#3E86C9'];
+    if (kind === 'sprouts') { [20,60,100,140].forEach((x,i)=>sprout(g, x, 36, 22, C[i%5])); }
+    else { [16,52,88,124].forEach((x,i)=>asterisk(g, x, 20, 12, C[(i+2)%5])); dot(g, 148, 20, 5, C[1]); }
+    el.innerHTML = ''; el.appendChild(s);
+  }
+  document.querySelectorAll('.divider').forEach(d => fillDivider(d, d.dataset.doodle));
+  (function () {
+    const rx = document.querySelector('.rx .doodle'); if (!rx) return;
+    const g = E('g', {}); rx.appendChild(g);
+    sprout(g, 34, 78, 30, '#4E9A54'); grass(g, 66, 84, 26, '#3F9E86'); spark(g, 78, 26, 12, '#E7C13E');
+  })();
+</script>
+</body>
+</html>
