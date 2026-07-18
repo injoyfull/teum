@@ -29,7 +29,7 @@
     display:flex; align-items:center; justify-content:center;
     cursor:pointer; transition:opacity 1.2s ease;
   }
-  #intro.done { opacity:0; pointer-events:none; }
+  #intro.done { opacity:0; pointer-events:none; transition:opacity 1.6s ease; }
   .intro-stage {
     display:flex; align-items:center; justify-content:center;
     font-family:'Noto Serif KR','Nanum Myeongjo',serif; font-weight:300;
@@ -38,7 +38,7 @@
   #iSum, #iSwim { opacity:0; transition:opacity 1.6s ease; }
   #iMid {
     position:relative; display:inline-block; width:.42em; height:1.15em;
-    transition:width 3.8s cubic-bezier(.55,0,.2,1);
+    transition:width 2.6s cubic-bezier(.5,0,.25,1);
   }
   #iMid > span { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); }
   #iColon { opacity:0; transition:opacity 1.6s ease; }
@@ -104,6 +104,22 @@
     transition:transform .25s ease;
   }
   .issue-body .read:hover { transform:translateX(4px); }
+
+  /* ── 시즌 목차 ── */
+  .season { margin-top:7rem; }
+  .season-item {
+    display:flex; align-items:baseline; gap:22px; padding:1.5rem 0;
+    border-top:1px solid #D8D2C6; text-decoration:none; color:var(--ink);
+    transition:padding-left .25s ease;
+  }
+  .season-item:last-of-type { border-bottom:1px solid #D8D2C6; }
+  .season-item:hover { padding-left:8px; }
+  .season-item .sn {
+    font-family:'Noto Serif KR',serif; font-weight:300; font-size:30px;
+    line-height:1; min-width:52px; letter-spacing:-.02em;
+  }
+  .season-item .st { flex:1; font-size:16px; font-weight:400; word-break:keep-all; }
+  .season-item .ss { font-size:12px; letter-spacing:.16em; color:var(--mute); white-space:nowrap; }
 
   /* ── 리듬 ── */
   .rhythm { margin-top:8.5rem; }
@@ -187,6 +203,18 @@
     </div>
   </section>
 
+  <section class="season reveal">
+    <p class="overline">시즌 1 — 여름 감각 다이빙</p>
+    <a class="season-item" href="letter-01.html">
+      <span class="sn">01</span><span class="st">오늘, 초록을 본 적이 있나요?</span><span class="ss">시각</span></a>
+    <a class="season-item" href="letter-02.html">
+      <span class="sn">02</span><span class="st">물에 손을 담가본 게 언제인가요?</span><span class="ss">촉각</span></a>
+    <a class="season-item" href="letter-03.html">
+      <span class="sn">03</span><span class="st">빗소리를 끝까지 들어본 적 있나요?</span><span class="ss">청각</span></a>
+    <a class="season-item" href="letter-04.html">
+      <span class="sn">04</span><span class="st">수박의 첫 입, 기억하세요?</span><span class="ss">미각·후각</span></a>
+  </section>
+
   <section class="rhythm">
     <p class="overline">틈의 리듬</p>
     <div class="rhythm-item reveal"><div class="rhythm-no">01</div>
@@ -236,20 +264,23 @@
     const t = ms => new Promise(r => setTimeout(r, ms));
     (async () => {
       await t(500); if (skipped) return;
-      sum.style.opacity = 1; swim.style.opacity = 1;
+      sum.style.opacity = 1;                              // 숨, 먼저
+      await t(1200); if (skipped) return;
+      swim.style.opacity = 1;                             // 쉼, 뒤따라
+      await t(1600); if (skipped) return;
       colon.style.opacity = 1;                            // 숨:쉼
-      await t(2300); if (skipped) return;
-      mid.style.width = '2em';                            // 사이가 아주 천천히 벌어진다
-      await t(1500); if (skipped) return;
+      await t(1400); if (skipped) return;
+      mid.style.width = '2em';                            // 사이가 벌어진다
+      await t(1400); if (skipped) return;
       colon.style.opacity = 0;                            // :은 흩어지고
       await t(1300); if (skipped) return;
       dot.style.opacity = 1;                              // 점 하나가 중앙에
-      await t(2300); if (skipped) return;
+      await t(2200); if (skipped) return;
       sum.style.opacity = 0; swim.style.opacity = 0;
       dot.style.opacity = 0;                              // 다 사라지고
       await t(1500); if (skipped) return;
       teum.style.opacity = 1;                             // 틈만 남는다
-      await t(2100); if (skipped) return;
+      await t(4200); if (skipped) return;                 // 가장 오래 머무는 장면
       finish();
     })();
   })();
