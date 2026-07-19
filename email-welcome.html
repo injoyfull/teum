@@ -5,11 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>틈 — 환영합니다</title>
 <!--[if !mso]><!-->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <!--<![endif]-->
 <style>
   body { margin:0; padding:0; }
-  a { color:#3B6B4A; }
+  a { color:#E85D1C; }
+  /* 랜딩과 같은 서체 스택 — 웹폰트가 막히는 메일 클라이언트에서도 명조/고딕으로 자연스럽게 내려앉는다 */
+  .teum-serif { font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; }
+  .teum-sans  { font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; }
 </style>
 </head>
 <body style="margin:0; padding:0; background-color:#EDE8DF;">
@@ -27,70 +30,61 @@
   <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px; background-color:#F5F1EA;">
 
     <!-- 마스트헤드 -->
-    <tr><td style="padding:36px 40px 0;">
+    <tr><td style="padding:40px 44px 0;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td style="font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-size:11px; letter-spacing:0.22em; color:#8A847A;">
+          <td class="teum-sans" style="font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-weight:400; font-size:11px; letter-spacing:0.2em; color:#8A847A;">
             숨과 쉼 사이 · 격주 편지
           </td>
-          <td align="right" style="font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-size:11px; letter-spacing:0.18em; color:#8A847A;">
+          <td align="right" class="teum-sans" style="font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-weight:400; font-size:11px; letter-spacing:0.16em; color:#8A847A;">
             환영합니다
           </td>
         </tr>
       </table>
     </td></tr>
 
-    <!-- 제호 -->
-    <tr><td style="padding:10px 40px 8px;">
-      <div style="font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-weight:900; font-size:120px; line-height:1; color:#1A1817;">
-        틈<span style="color:#E85D1C;">.</span>
+    <!-- 제호: 랜딩과 같은 얇은 서체(300), 점은 '틈'의 밑선에 맞춰 .0815em 내림 -->
+    <tr><td style="padding:30px 44px 0;">
+      <div class="teum-serif" style="font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-weight:300; font-size:104px; line-height:1.08; letter-spacing:0.01em; color:#1A1817;">
+        틈<span style="color:#E85D1C; display:inline-block; transform:translateY(.0815em);">.</span>
       </div>
     </td></tr>
 
-    <tr><td style="padding:0 40px 34px;">
-      <div style="font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-size:12px; letter-spacing:0.06em; color:#8A847A;">
-        구독해 주셔서 고맙습니다
-      </div>
+    <tr><td class="teum-sans" style="padding:14px 44px 40px; font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-weight:300; font-size:12px; letter-spacing:0.06em; color:#8A847A;">
+      구독해 주셔서 고맙습니다
+    </td></tr>
+
+    <!-- 리드 -->
+    <tr><td class="teum-serif" style="padding:0 44px; font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-weight:600; font-size:25px; line-height:1.55; color:#1A1817; word-break:keep-all;">
+      방금, 몇 초 걸리지 않으셨을 거예요.
     </td></tr>
 
     <!-- 본문 -->
-    <tr><td style="padding:0 40px;">
-      <div style="font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-weight:600; font-size:24px; line-height:1.55; color:#1A1817; word-break:keep-all;">
-        방금, 몇 초 걸리지 않으셨을 거예요.
-      </div>
+    <tr><td class="teum-serif" style="padding:26px 44px 0; font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-weight:300; font-size:16px; line-height:2.15; color:#3B3733; word-break:keep-all;">
+      이메일 한 줄 적고, 누르고. 그게 다였지요.<br>
+      그런데 그 몇 초로 <span style="font-weight:600; color:#1A1817;">2주에 한 번 멈출 자리</span>가 생겼습니다.
     </td></tr>
 
-    <tr><td style="padding:24px 40px 0;">
-      <div style="font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-size:16px; line-height:2.1; color:#3B3733; word-break:keep-all;">
-        이메일 한 줄 적고, 누르고. 그게 다였지요.<br>
-        그런데 그 몇 초로 <strong style="color:#1A1817;">2주에 한 번 멈출 자리</strong>가 생겼습니다.
-      </div>
+    <tr><td class="teum-serif" style="padding:28px 44px 0; font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-weight:300; font-size:16px; line-height:2.15; color:#3B3733; word-break:keep-all;">
+      틈은 한 통에 감각 하나씩 다루는 편지예요.<br>
+      초록, 물, 빗소리, 첫 입 같은 것들이요.<br>
+      그리고 5분이면 되는 아주 작은 처방을 하나씩 넣습니다.
     </td></tr>
 
-    <tr><td style="padding:26px 40px 0;">
-      <div style="font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-size:16px; line-height:2.1; color:#3B3733; word-break:keep-all;">
-        틈은 한 통에 감각 하나씩 다루는 편지예요.<br>
-        초록, 물, 빗소리, 첫 입 같은 것들이요.<br>
-        그리고 5분이면 되는 아주 작은 처방을 하나씩 넣습니다.
-      </div>
-    </td></tr>
-
-    <tr><td style="padding:26px 40px 0;">
-      <div style="font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-size:16px; line-height:2.1; color:#3B3733; word-break:keep-all;">
-        거창하면 안 하게 되잖아요.<br>
-        그래서 일부러 시시할 만큼 작게 만들어요.
-      </div>
+    <tr><td class="teum-serif" style="padding:28px 44px 0; font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-weight:300; font-size:16px; line-height:2.15; color:#3B3733; word-break:keep-all;">
+      거창하면 안 하게 되잖아요.<br>
+      그래서 일부러 시시할 만큼 작게 만들어요.
     </td></tr>
 
     <!-- 안내 상자 -->
-    <tr><td style="padding:34px 40px 0;">
+    <tr><td style="padding:36px 44px 0;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#EFF3E6; border-radius:14px;">
-        <tr><td style="padding:26px 28px;">
-          <div style="font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-size:11px; letter-spacing:0.2em; color:#8A847A; padding-bottom:12px;">
+        <tr><td style="padding:28px 30px;">
+          <div class="teum-sans" style="font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-weight:400; font-size:11px; letter-spacing:0.2em; color:#8A847A; padding-bottom:14px;">
             앞으로 이렇게 갑니다
           </div>
-          <div style="font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-size:15px; line-height:2; color:#3B3733; word-break:keep-all;">
-            2주에 한 번, <strong style="color:#1A1817;">일요일 아침</strong>에 도착합니다.<br>
+          <div class="teum-serif" style="font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-weight:300; font-size:15px; line-height:2.05; color:#3B3733; word-break:keep-all;">
+            2주에 한 번, <span style="font-weight:600; color:#1A1817;">일요일 아침</span>에 도착합니다.<br>
             광고는 없어요. 조용히 한 통씩만요.<br>
             떠나고 싶어지시면 아래 링크로 언제든 그만두실 수 있고요.
           </div>
@@ -98,29 +92,23 @@
       </table>
     </td></tr>
 
-    <tr><td style="padding:32px 40px 0;">
-      <div style="font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-size:16px; line-height:2.1; color:#3B3733; word-break:keep-all;">
-        읽다가 무언가 떠오르시면, 그냥 <strong style="color:#1A1817;">답장</strong>해 주세요.<br>
-        한 줄이어도 좋아요. 저는 그 한 줄을 다 읽습니다.
-      </div>
+    <tr><td class="teum-serif" style="padding:34px 44px 0; font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-weight:300; font-size:16px; line-height:2.15; color:#3B3733; word-break:keep-all;">
+      읽다가 무언가 떠오르시면, 그냥 <span style="font-weight:600; color:#1A1817;">답장</span>해 주세요.<br>
+      한 줄이어도 좋아요. 저는 그 한 줄이 반갑습니다.
     </td></tr>
 
-    <tr><td style="padding:30px 40px 0;">
-      <div style="font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-weight:600; font-size:19px; line-height:1.7; color:#1A1817; word-break:keep-all;">
-        곧 첫 편지로 만나요.
-      </div>
+    <tr><td class="teum-serif" style="padding:32px 44px 0; font-family:'Noto Serif KR','Nanum Myeongjo',AppleMyungjo,Batang,serif; font-weight:600; font-size:20px; line-height:1.7; color:#1A1817; word-break:keep-all;">
+      곧 첫 편지로 만나요.
     </td></tr>
 
-    <tr><td style="padding:16px 40px 0;">
-      <div style="font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-size:13px; color:#8A847A;">
-        — 올리한나 드림
-      </div>
+    <tr><td class="teum-sans" style="padding:18px 44px 0; font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-weight:300; font-size:13px; color:#8A847A;">
+      — 올리한나 드림
     </td></tr>
 
     <!-- 지난 편지 -->
-    <tr><td style="padding:38px 40px 0;">
-      <div style="border-top:1px solid #DAD4C7; padding-top:24px;">
-        <div style="font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-size:12px; line-height:1.9; color:#8A847A; word-break:keep-all;">
+    <tr><td style="padding:40px 44px 0;">
+      <div style="border-top:1px solid #DAD4C7; padding-top:26px;">
+        <div class="teum-sans" style="font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-weight:300; font-size:12.5px; line-height:1.95; color:#8A847A; word-break:keep-all;">
           기다리기 어려우시면, 지난 편지들이 여기 있어요.<br>
           <a href="https://injoyfull.github.io/teum/" style="color:#E85D1C; text-decoration:none; border-bottom:1px solid #E85D1C;">틈의 편지 모두 보기 →</a>
         </div>
@@ -128,8 +116,8 @@
     </td></tr>
 
     <!-- 푸터 -->
-    <tr><td style="padding:36px 40px 40px;">
-      <div style="border-top:1px solid #DAD4C7; padding-top:20px; font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-size:11px; line-height:1.9; color:#8A847A;">
+    <tr><td style="padding:38px 44px 42px;">
+      <div class="teum-sans" style="border-top:1px solid #DAD4C7; padding-top:22px; font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-weight:300; font-size:11px; line-height:1.95; color:#8A847A;">
         틈 — 숨과 쉼 사이의 편지 · 글 · 올리한나<br>
         <!-- ※ 스티비에서 발신자 정보(상호·주소)와 수신거부 링크가 자동으로 들어갑니다 -->
       </div>
