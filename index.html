@@ -83,6 +83,17 @@
   .subscribe button { border:0; background:transparent; cursor:pointer; font-family:inherit; font-size:15px; font-weight:500; letter-spacing:.08em; color:var(--accent); padding:14px 8px; white-space:nowrap; transition:transform .25s ease; }
   .subscribe button:hover { transform:translateX(4px); }
   .form-note { margin-top:.9rem; font-size:12px; color:var(--mute); font-weight:300; }
+  .consent { display:flex; align-items:flex-start; gap:8px; margin-top:1rem; max-width:440px;
+             font-size:12.5px; line-height:1.7; color:var(--mute); font-weight:300; cursor:pointer; }
+  /* .subscribe input 의 flex:1 · padding 을 덮어써야 체크박스가 늘어나지 않는다 */
+  .consent input { flex:0 0 auto; width:13px; height:13px; min-width:13px; padding:0;
+                   margin:4px 0 0; accent-color:var(--accent); cursor:pointer; }
+  .consent .link { border:0; background:transparent; padding:0; font:inherit; color:var(--ink);
+                   text-decoration:underline; text-underline-offset:2px; cursor:pointer; }
+  .consent-detail { display:none; max-width:440px; margin-top:.7rem; padding:14px 16px;
+                    background:rgba(255,255,255,.55); border-radius:10px;
+                    font-size:12px; line-height:1.9; color:var(--ink-soft); word-break:keep-all; }
+  .consent-detail.open { display:block; }
   .form-done { display:none; padding:14px 2px; font-size:16px; color:var(--accent); }
 
   /* ── 잡지 공통 ── */
@@ -190,6 +201,15 @@
         <input type="email" name="email" required placeholder="이메일을 적어주세요" aria-label="이메일 주소" autocomplete="email" inputmode="email">
         <button type="submit">구독하기 →</button>
       </form>
+      <label class="consent" id="consentRow">
+        <input type="checkbox" id="subConsent" form="subForm" required aria-describedby="consentDetail">
+        <span>(필수) <button type="button" class="link" id="consentToggle" aria-expanded="false" aria-controls="consentDetail">개인정보 수집·이용</button>에 동의합니다.</span>
+      </label>
+      <div class="consent-detail" id="consentDetail">
+        뉴스레터 발송을 위한 최소한의 개인정보(이메일 주소)를 수집하고 이용합니다.
+        수집된 정보는 발송 외 다른 목적으로 이용되지 않으며,
+        서비스가 종료되거나 구독을 해지할 경우 즉시 파기됩니다.
+      </div>
       <p class="form-done serif" id="subDoneMsg">깨어나는 중입니다. 첫 편지가 곧 갑니다.</p>
       <p class="form-note">2주에 한 통. 광고 없이, 조용히. 언제든 떠날 수 있어요.</p>
     </div>
@@ -325,27 +345,42 @@
      (입력칸 name 이 'email' 이 아니라면 STIBEE_EMAIL_FIELD 도 맞춰주세요)
 
      비워두면 지금처럼 화면만 완료 처리되고, 이메일은 어디에도 저장되지 않습니다. */
-  const STIBEE_ACTION      = '';
+  const STIBEE_ACTION      = 'https://stibee.com/api/v1.0/lists/lmzGo5_79bgjXdkenHlhVN9YAeMZjw==/public/subscribers';
   const STIBEE_EMAIL_FIELD = 'email';
 
   (function () {
-    const form = document.getElementById('subForm');
-    const done = document.getElementById('subDoneMsg');
-    const note = document.querySelector('.form-note');
-    const input = form.querySelector('input[type="email"]');
+    const form    = document.getElementById('subForm');
+    const done    = document.getElementById('subDoneMsg');
+    const note    = document.querySelector('.form-note');
+    const input   = form.querySelector('input[type="email"]');
+    const consent = document.getElementById('subConsent');
+    const row     = document.getElementById('consentRow');
+    const detail  = document.getElementById('consentDetail');
+    const toggle  = document.getElementById('consentToggle');
 
     if (STIBEE_ACTION) {
       form.action = STIBEE_ACTION;
       input.name  = STIBEE_EMAIL_FIELD;
     }
 
+    // 개인정보 수집·이용 안내 펼치기 (체크박스 토글과 겹치지 않게 이벤트 차단)
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const open = detail.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
     form.addEventListener('submit', function (e) {
       if (!input.value.trim()) return;              // 브라우저 기본 검증에 맡김
+      if (!consent.checked) { e.preventDefault(); return; }   // 동의 없으면 전송 안 함
 
       if (!STIBEE_ACTION) e.preventDefault();       // 미연결이면 전송하지 않음
       // 연결된 경우: 기본 동작(숨은 iframe 으로 POST)을 그대로 두고 화면만 전환
 
       form.style.display = 'none';
+      row.style.display = 'none';
+      detail.style.display = 'none';
       done.style.display = 'block';
       if (STIBEE_ACTION && note) {
         note.textContent = '확인 메일을 보냈어요. 메일함에서 구독을 완료해 주세요.';
