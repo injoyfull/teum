@@ -348,6 +348,11 @@
   const STIBEE_ACTION      = 'https://stibee.com/api/v1.0/lists/lmzGo5_79bgjXdkenHlhVN9YAeMZjw==/public/subscribers';
   const STIBEE_EMAIL_FIELD = 'email';
 
+  /* 스티비 주소록에서 '구독 확인 이메일'(더블 옵트인)을 켰다면 true 로 바꾸세요.
+     꺼져 있으면(현재 상태) 확인 메일이 가지 않고 곧바로 구독자로 등록됩니다.
+     이 값이 실제 설정과 다르면 독자에게 오지 않을 메일을 기다리게 만듭니다. */
+  const STIBEE_DOUBLE_OPTIN = false;
+
   (function () {
     const form    = document.getElementById('subForm');
     const done    = document.getElementById('subDoneMsg');
@@ -383,7 +388,9 @@
       detail.style.display = 'none';
       done.style.display = 'block';
       if (STIBEE_ACTION && note) {
-        note.textContent = '확인 메일을 보냈어요. 메일함에서 구독을 완료해 주세요.';
+        note.textContent = STIBEE_DOUBLE_OPTIN
+          ? '확인 메일을 보냈어요. 메일함에서 구독을 완료해 주세요.'
+          : '구독이 완료되었어요. 2주에 한 번, 조용히 찾아갈게요.';
       }
     });
   })();
