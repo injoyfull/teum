@@ -70,7 +70,10 @@
 
   header { padding-top:10vh; }
   h1.wordmark { font-weight:300; font-size:clamp(120px,30vw,240px); line-height:.95; letter-spacing:.01em; }
-  h1 .dot { color:var(--accent); }
+  /* 점의 아래끝을 '틈'의 아래끝에 맞춘다.
+     Noto Serif KR 기준 '틈'은 베이스라인 아래로 .0958em, 마침표는 .0143em 내려가므로
+     그 차이 .0815em 만큼 점을 내리면 두 글자의 밑선이 같아진다. (em 이라 반응형에도 유지) */
+  h1 .dot { color:var(--accent); display:inline-block; transform:translateY(.0815em); }
   .mast, .tagline, .lede, .form-note { text-shadow:0 0 16px var(--paper), 0 0 10px var(--paper), 0 0 4px var(--paper); }
   .tagline { margin-top:2.2rem; font-weight:600; font-size:clamp(22px,4.6vw,32px); line-height:1.5; word-break:keep-all; }
   .lede { margin-top:1.6rem; max-width:34em; font-weight:300; font-size:16px; line-height:2.05; color:var(--ink-soft); word-break:keep-all; }
