@@ -181,8 +181,13 @@
       2주에 한 번, 하나의 감각과 5분이면 충분한 아주 작은 처방을 조용히 건넵니다.
     </p>
     <div class="subscribe">
-      <form id="subForm" onsubmit="return subDone(event)">
-        <input type="email" required placeholder="이메일을 적어주세요" aria-label="이메일 주소" autocomplete="email" inputmode="email">
+      <!-- 스티비 연결 지점.
+           STIBEE_ACTION 에 주소록 > 구독 폼 > [코드로 설치하기] 의 form action 주소를 넣으면
+           이 폼이 그대로 스티비로 전송됩니다. 디자인은 지금 그대로 유지됩니다.
+           (아래 숨은 iframe 으로 전송해 페이지 이동 없이, CORS 영향도 받지 않습니다) -->
+      <iframe name="stibeeSink" id="stibeeSink" style="display:none" title="구독 전송" aria-hidden="true"></iframe>
+      <form id="subForm" method="post" target="stibeeSink">
+        <input type="email" name="email" required placeholder="이메일을 적어주세요" aria-label="이메일 주소" autocomplete="email" inputmode="email">
         <button type="submit">구독하기 →</button>
       </form>
       <p class="form-done serif" id="subDoneMsg">깨어나는 중입니다. 첫 편지가 곧 갑니다.</p>
@@ -313,7 +318,40 @@
   const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('on')), { threshold: 0.2 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  function subDone(e) { e.preventDefault(); document.getElementById('subForm').style.display = 'none'; document.getElementById('subDoneMsg').style.display = 'block'; return false; }
+  /* ── 구독 폼 ───────────────────────────────────────────────────────────
+     연결하려면 STIBEE_ACTION 한 줄만 채우면 됩니다.
+     스티비 > 주소록 > 구독 관리 > 구독 폼 > [코드로 설치하기] 에서 나온
+     <form> 태그의 action="..." 주소를 그대로 붙여넣으세요.
+     (입력칸 name 이 'email' 이 아니라면 STIBEE_EMAIL_FIELD 도 맞춰주세요)
+
+     비워두면 지금처럼 화면만 완료 처리되고, 이메일은 어디에도 저장되지 않습니다. */
+  const STIBEE_ACTION      = '';
+  const STIBEE_EMAIL_FIELD = 'email';
+
+  (function () {
+    const form = document.getElementById('subForm');
+    const done = document.getElementById('subDoneMsg');
+    const note = document.querySelector('.form-note');
+    const input = form.querySelector('input[type="email"]');
+
+    if (STIBEE_ACTION) {
+      form.action = STIBEE_ACTION;
+      input.name  = STIBEE_EMAIL_FIELD;
+    }
+
+    form.addEventListener('submit', function (e) {
+      if (!input.value.trim()) return;              // 브라우저 기본 검증에 맡김
+
+      if (!STIBEE_ACTION) e.preventDefault();       // 미연결이면 전송하지 않음
+      // 연결된 경우: 기본 동작(숨은 iframe 으로 POST)을 그대로 두고 화면만 전환
+
+      form.style.display = 'none';
+      done.style.display = 'block';
+      if (STIBEE_ACTION && note) {
+        note.textContent = '확인 메일을 보냈어요. 메일함에서 구독을 완료해 주세요.';
+      }
+    });
+  })();
 </script>
 </body>
 </html>
