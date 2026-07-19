@@ -78,14 +78,14 @@
 
   .subscribe { margin-top:3.2rem; }
   .subscribe form { display:flex; max-width:440px; border-bottom:2px solid var(--ink); background:rgba(245,241,234,.72); }
-  .subscribe input { flex:1; min-width:0; border:0; outline:0; background:transparent; font-family:inherit; font-size:16px; padding:14px 8px; color:var(--ink); }
-  .subscribe input::placeholder { color:var(--mute); font-weight:300; }
+  /* 이메일 칸에만 적용 — 예전에 범위가 넓어서 동의 체크박스까지 늘어났었다 */
+  .subscribe form input[type="email"] { flex:1; min-width:0; border:0; outline:0; background:transparent; font-family:inherit; font-size:16px; padding:14px 8px; color:var(--ink); }
+  .subscribe form input[type="email"]::placeholder { color:var(--mute); font-weight:300; }
   .subscribe button { border:0; background:transparent; cursor:pointer; font-family:inherit; font-size:15px; font-weight:500; letter-spacing:.08em; color:var(--accent); padding:14px 8px; white-space:nowrap; transition:transform .25s ease; }
   .subscribe button:hover { transform:translateX(4px); }
   .form-note { margin-top:.9rem; font-size:12px; color:var(--mute); font-weight:300; }
   .consent { display:flex; align-items:flex-start; gap:8px; margin-top:1rem; max-width:440px;
              font-size:12.5px; line-height:1.7; color:var(--mute); font-weight:300; cursor:pointer; }
-  /* .subscribe input 의 flex:1 · padding 을 덮어써야 체크박스가 늘어나지 않는다 */
   .consent input { flex:0 0 auto; width:13px; height:13px; min-width:13px; padding:0;
                    margin:4px 0 0; accent-color:var(--accent); cursor:pointer; }
   .consent .link { border:0; background:transparent; padding:0; font:inherit; color:var(--ink);
