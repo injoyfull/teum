@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F5F1EA">
+<meta name="description" content="틈 No.06 — 물 위에 누워본 적 있나요? 이름 없는 감각 편.">
+<title>틈 · No.06 — 물 위에 누워본 적 있나요?</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;900&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:#F5F1EA; --ink:#1A1817; --ink-soft:#3B3733; --mute:#8A847A;
+    --line:#3AA394;          /* 이번 호의 색 — 이름 없는 감각 편 · 깊은 물 */
+    --accent:#E85D1C; --stroke:150;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink);
+    font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo',sans-serif;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  .serif { font-family:'Noto Serif KR','Nanum Myeongjo',serif; }
+  .page { max-width:720px; margin:0 auto; padding:40px 24px 0; }
+
+  .cover { position:relative; width:100%; aspect-ratio:5/6.2; overflow:hidden; background:var(--paper); }
+  .cover svg { position:absolute; inset:0; width:100%; height:100%; display:block; }
+  .cover .line { fill:none; stroke:var(--line); stroke-width:var(--stroke); stroke-linecap:round; }
+  .cover-top { position:absolute; top:0; left:0; right:0; display:flex; justify-content:space-between;
+    font-size:12px; letter-spacing:.14em; color:var(--ink); }
+  .cover-top .mast { font-family:'Noto Serif KR',serif; font-weight:600; }
+  .cover-title { position:absolute; left:0; right:0; bottom:56px;
+    font-family:'Noto Serif KR',serif; font-weight:300;
+    font-size:clamp(34px,8.4vw,62px); line-height:1.24; letter-spacing:-.01em; word-break:keep-all; }
+  .cover-foot { position:absolute; left:0; right:0; bottom:0; display:flex;
+    justify-content:space-between; align-items:flex-end; font-size:12px; color:var(--mute); }
+  .cover-foot .no { font-family:'Noto Serif KR',serif; font-weight:600; font-size:20px; color:var(--ink); }
+
+  article { padding:72px 0 0; }
+  .kicker { font-size:12px; letter-spacing:.22em; color:var(--mute); margin-bottom:16px; }
+  .lead { font-family:'Noto Serif KR',serif; font-weight:600;
+    font-size:clamp(23px,4.8vw,30px); line-height:1.55; word-break:keep-all; margin-bottom:38px; }
+  p.body { font-family:'Noto Serif KR',serif; font-weight:300; font-size:17px; line-height:2.15;
+    color:var(--ink-soft); word-break:keep-all; margin:0 0 28px; }
+  p.body b { font-weight:600; color:var(--ink); }
+  h3.sub { font-family:'Noto Serif KR',serif; font-weight:600; font-size:21px;
+    margin:44px 0 18px; word-break:keep-all; }
+  .rule { width:56px; height:8px; border-radius:4px; background:var(--line); margin:52px 0; }
+  .sign { font-size:13px; color:var(--mute); margin-top:6px; }
+
+  .rx { margin:52px 0; padding:34px 30px; background:#E3F1EE; border-radius:16px; }
+  .rx .tag { font-size:12px; letter-spacing:.2em; color:var(--mute); margin-bottom:10px; }
+  .rx h4 { font-family:'Noto Serif KR',serif; font-weight:600; font-size:22px; margin-bottom:14px; word-break:keep-all; }
+  .rx p { font-size:15px; line-height:2; color:var(--ink-soft); word-break:keep-all; }
+  .rx p b { color:var(--ink); font-weight:500; }
+
+  .invite { margin:44px 0; padding:26px 0; border-top:1px solid #DAD4C7; border-bottom:1px solid #DAD4C7;
+    font-size:15px; line-height:1.95; color:var(--ink-soft); word-break:keep-all; }
+  .invite b { color:var(--ink); font-weight:500; }
+
+  .closing { margin:64px 0 0; }
+  .closing p { font-family:'Noto Serif KR',serif; font-weight:600;
+    font-size:clamp(22px,5vw,28px); line-height:1.6; word-break:keep-all; }
+
+  .season-end { margin:56px 0 0; padding:30px 0 0; border-top:1px solid #DAD4C7;
+    font-size:14px; line-height:2; color:var(--ink-soft); word-break:keep-all; }
+  .season-end b { color:var(--ink); font-weight:500; }
+
+  footer { margin-top:56px; padding:28px 0 64px; border-top:1px solid #DAD4C7;
+    font-size:12px; line-height:2; color:var(--mute); }
+  footer a { color:var(--mute); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <section class="cover">
+    <svg viewBox="0 0 1000 1240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="line" d="M -180,470 C 180,250 470,250 640,470 C 780,650 950,620 1200,470" />
+    </svg>
+    <div class="cover-top">
+      <span class="mast">틈 <span style="color:var(--mute); font-weight:300;">|</span> 숨과 쉼 사이</span>
+      <span>Vol. 06 · 이름 없는 감각 편</span>
+    </div>
+    <h1 class="cover-title serif">물 위에<br>누워본 적 있나요?</h1>
+    <div class="cover-foot">
+      <span>시즌 1 · 여름 감각 다이빙 — Summer Sense Diving</span>
+      <span class="no">No.06</span>
+    </div>
+  </section>
+
+  <article>
+    <p class="kicker">시즌 1 여름 감각 다이빙 · 이번 호의 감각 — 이름 없는 감각</p>
+    <p class="lead serif">힘을 빼면 가라앉을 줄 알았는데,<br>힘을 빼야 뜨더라고요.</p>
+
+    <p class="body">
+      "힘 빼세요."
+      수영을 배우면 제일 많이 듣는 말이지요.
+      그런데 참 이상해요. 힘을 빼라는 말을 듣고 힘이 빠지는 사람은 없거든요.
+      빼야지, 빼야지, 하는 동안 어깨는 더 올라가 있고요.
+    </p>
+
+    <p class="body">
+      그러다 어느 순간, 정말 어쩌다 한 순간.
+      물이 몸을 받쳐줍니다.
+      등 밑이 넓어지는 것 같고, 몸무게가 어디론가 가버려요.
+      귀가 물에 잠기면 세상이 한 뼘 멀어지고요.
+      <b>그 낯선 가벼움을 뭐라고 불러야 할까요.</b>
+      사전에는 부력이라고 적혀 있지만, 그 단어에는 그 기분이 안 들어 있습니다.
+    </p>
+
+    <h3 class="sub serif">잘하려고 하면 가라앉아요</h3>
+    <p class="body">
+      물에 뜨는 데는 자격이 필요 없어요.
+      애쓴다고 더 띄워주는 것도 아니고요.
+      오히려 반대지요.
+      몸을 맡기면, 물이 받쳐줍니다.
+    </p>
+    <p class="body">
+      저도 꽤 오래 애쓰는 자세로 살았던 것 같아요.
+      어깨에 힘을 주고, 턱을 당기고, 가라앉지 않으려고요.
+      <b>물이 아니라, 하루하루에서요.</b>
+      그래서 그 말이 그렇게 어려웠나 봐요.
+      힘을 빼 본 적이, 별로 없었던 거지요.
+    </p>
+
+    <h3 class="sub serif">잠시 덮여 있었을 뿐</h3>
+    <p class="body">
+      이번 여름, 여섯 번의 편지를 보냈습니다.
+      초록을 보고, 물에 손을 담그고, 빗소리를 끝까지 듣고,
+      첫 입을 눈 감고 먹고, 그늘과 볕의 경계를 밟고, 오늘은 물 위에 누웠어요.
+      생각해 보면 전부 힘 빼는 연습이었네요.
+      혼자 한 일도 아니었고요.
+      편지 너머에서 같이 눈을 감고, 같이 손을 담가 주신 분들이 계셨으니까요.
+    </p>
+    <p class="body">
+      하면서 알게 된 게 하나 있어요.
+      감각이 무뎌졌다는 건 고장 났다는 뜻이 아니더라고요.
+      잠시 덮여 있었을 뿐이에요. 바쁜 날들이 그 위에 쌓여서요.
+      그리고 덮인 것은, 걷을 수 있습니다.
+      걷어 보니 초록은 그 자리에 있더라고요. 소리도, 맛도, 온도도요.
+      <b>돌아와도 됩니다. 언제든지요.</b>
+    </p>
+    <p class="sign">— 올리한나 드림</p>
+
+    <div class="rule"></div>
+
+    <div class="rx">
+      <p class="tag">이번 호의 감각 처방 · 이름 없는 감각</p>
+      <h4 class="serif">오늘 밤, 몸무게를 전부 맡겨봅니다</h4>
+      <p>
+        욕조가 있다면 물에 누워 귀까지 잠겨 보세요.
+        없다면 침대에서요.
+        눕고 나서 딱 5분만, 몸 어디에 아직 힘이 남아 있는지 찾아보세요.
+        어깨인지, 턱인지, 손인지.
+        찾았으면 그쪽 무게를 슬며시 놓아주세요.
+        <b>내가 눕는 게 아니라, 침대가 나를 들고 있다고 생각해 보는 거예요.</b>
+      </p>
+    </div>
+
+    <div class="invite">
+      당신은 어디에 힘이 남아 있었나요? 이 편지에 그냥 <b>답장</b>해 주세요.
+      당신이 놓아준 그 무게가, 다음 시즌 첫 편지의 <b>‘어느 독자의 감각’</b>에 익명으로 실립니다.
+    </div>
+
+    <div class="closing">
+      <p class="serif">물 위에 누워본 적 있나요?<br>힘을 빼도 괜찮았습니다.</p>
+    </div>
+
+    <div class="season-end">
+      <b>시즌 1 「여름 감각 다이빙」이 여기서 마무리됩니다.</b><br>
+      여섯 번의 편지로, 덮여 있던 감각들을 함께 깨웠습니다.
+      이 편지들이 당신의 여름에 작은 틈을 냈기를,
+      그 틈으로 계절이 조금 스며들었기를 바랍니다.
+      다음 시즌, 새로운 감각으로 다시 편지할게요. 그때까지 틈틈이, 안녕히.
+    </div>
+
+    <footer>
+      틈 — 숨과 쉼 사이의 편지 · 시즌 1 여름 감각 다이빙 · No.06 이름 없는 감각 편<br>
+      글 · 올리한나<br>
+      문의 · <a href="#">hello@teum.letter</a> (준비 중)
+    </footer>
+  </article>
+</div>
+</body>
+</html>
