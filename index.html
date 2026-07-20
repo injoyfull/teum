@@ -174,6 +174,29 @@
   .reveal { opacity:0; transform:translateY(24px); transition:opacity .9s ease, transform .9s ease; }
   .reveal.on { opacity:1; transform:none; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
+
+  /* ── 데스크톱 ──────────────────────────────────────────────
+     좁은 한 단으로만 두면 넓은 화면에서 양옆이 크게 비어 '모바일 화면'처럼 보인다.
+     폭을 넓히고 헤더를 두 단으로 펼친다. 모바일 레이아웃은 그대로. */
+  @media (min-width:1000px) {
+    .wrap { max-width:1080px; padding:0 48px; }
+
+    header { display:grid; grid-template-columns:1fr 1fr; gap:0 72px;
+             align-items:start; margin-top:1rem; }
+    h1.wordmark { grid-column:1; grid-row:1; font-size:clamp(200px,17vw,280px); margin-top:-.06em; }
+    .tagline    { grid-column:1; grid-row:2; margin-top:1.2rem; font-size:clamp(28px,2.5vw,36px); }
+    .lede       { grid-column:2; grid-row:1 / span 2; margin-top:5.2rem; max-width:30em; font-size:17px; }
+    .subscribe  { grid-column:2; grid-row:3; margin-top:2.4rem; }
+    .subscribe form, .consent, .consent-detail { max-width:100%; }
+
+    /* 시즌 목차·리듬은 읽기 좋은 폭을 유지하되 여백만 넓힌다 */
+    .issue-body .desc, .rhythm-item p { max-width:34em; }
+  }
+
+  @media (min-width:1000px) and (max-width:1200px) {
+    header { gap:0 48px; }
+    .lede { margin-top:4rem; }
+  }
 </style>
 </head>
 <body>
