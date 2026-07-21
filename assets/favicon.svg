@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- 틈 — 두 획 사이가 벌어지고, 그 틈에 점 하나 -->
+  <rect width="32" height="32" rx="7" fill="#F5F1EA"/>
+  <rect x="6.9" y="7" width="3.2" height="18" rx="1.6" fill="#1A1817"/>
+  <rect x="21.9" y="7" width="3.2" height="18" rx="1.6" fill="#1A1817"/>
+  <circle cx="16" cy="16" r="2.2" fill="#E85D1C"/>
+</svg>
