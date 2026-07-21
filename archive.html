@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F5F1EA">
+<meta name="description" content="틈이 보낸 편지들. 시즌 1 여름 감각 다이빙 여섯 편.">
+<title>틈 — 지난 편지</title>
+<link rel="canonical" href="https://injoyfull.github.io/teum/archive.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="틈">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://injoyfull.github.io/teum/archive.html">
+<meta property="og:title" content="틈 — 지난 편지">
+<meta property="og:description" content="틈이 보낸 편지들. 시즌 1 여름 감각 다이빙 여섯 편.">
+<meta property="og:image" content="https://injoyfull.github.io/teum/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="틈 — 지난 편지">
+<meta name="twitter:description" content="틈이 보낸 편지들. 시즌 1 여름 감각 다이빙 여섯 편.">
+<meta name="twitter:image" content="https://injoyfull.github.io/teum/assets/og.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:#F5F1EA; --ink:#1A1817; --ink-soft:#3B3733; --mute:#8A847A;
+    --accent:#E85D1C; --hair:#DCD6C9;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink);
+    font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo',sans-serif;
+    -webkit-font-smoothing:antialiased; }
+  .serif { font-family:'Noto Serif KR','Nanum Myeongjo',serif; }
+  a { color:inherit; text-decoration:none; }
+
+  .page { max-width:1180px; margin:0 auto; padding:0 28px; }
+
+  /* ── 마스트헤드 ── */
+  .mast { display:flex; justify-content:space-between; align-items:baseline;
+          padding:26px 0 14px; border-bottom:1px solid var(--ink);
+          font-size:11.5px; letter-spacing:.16em; }
+  .mast .brand { font-family:'Noto Serif KR',serif; font-weight:600; font-size:13px; }
+  .mast .brand span { color:var(--mute); font-weight:300; margin:0 6px; }
+  .mast a.home { color:var(--mute); transition:color .2s ease; }
+  .mast a.home:hover { color:var(--accent); }
+
+  /* ── 표제 ── */
+  .head { padding:12vh 0 9vh; }
+  .head h1 { font-family:'Noto Serif KR',serif; font-weight:300;
+             font-size:clamp(56px,11vw,112px); line-height:1; letter-spacing:-.01em; }
+  .head .sub { margin-top:1.6rem; font-weight:300; font-size:15px; line-height:2;
+               color:var(--ink-soft); max-width:30em; word-break:keep-all; }
+
+  /* ── 시즌 헤더 ── */
+  .season-head { display:flex; justify-content:space-between; align-items:baseline;
+                 padding-bottom:16px; border-bottom:2px solid var(--ink); margin-bottom:52px; }
+  .season-head h2 { font-family:'Noto Serif KR',serif; font-weight:600; font-size:19px; }
+  .season-head .meta { font-size:11px; letter-spacing:.22em; color:var(--mute); }
+
+  /* ── 표지 격자 ── */
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+          gap:64px 30px; padding-bottom:10vh; }
+  .card { display:block; }
+  .card .cover { position:relative; aspect-ratio:5/6.2; overflow:hidden;
+                 background:var(--paper); border:1px solid var(--hair);
+                 transition:border-color .3s ease; }
+  .card .cover svg { position:absolute; inset:0; width:100%; height:100%; display:block; }
+  .card .cover .line { fill:none; stroke-width:150; stroke-linecap:round; }
+  .card .cover .folio { position:absolute; top:14px; left:16px; right:16px;
+                        display:flex; justify-content:space-between;
+                        font-size:9.5px; letter-spacing:.14em; color:var(--ink); }
+  .card .cover .ct { position:absolute; left:16px; right:16px; bottom:34px;
+                     font-family:'Noto Serif KR',serif; font-weight:300;
+                     font-size:clamp(17px,1.5vw,21px); line-height:1.32; word-break:keep-all; }
+  .card .cover .cno { position:absolute; left:16px; bottom:12px;
+                      font-family:'Noto Serif KR',serif; font-weight:600;
+                      font-size:15px; color:var(--ink); }
+
+  .card .info { margin-top:16px; }
+  .card .info .sense { font-size:10.5px; letter-spacing:.24em; color:var(--mute); }
+  .card .info .desc { margin-top:8px; font-weight:300; font-size:13.5px; line-height:1.9;
+                      color:var(--ink-soft); word-break:keep-all; }
+  .card .info .go { display:inline-block; margin-top:12px; font-size:13px; font-weight:500;
+                    letter-spacing:.04em; color:var(--accent);
+                    transition:transform .25s ease; }
+  .card:hover .cover { border-color:var(--ink); }
+  .card:hover .info .go { transform:translateX(4px); }
+
+  /* ── 다음 시즌 ── */
+  .next { padding:0 0 12vh; }
+  .next .box { border-top:1px solid var(--hair); padding-top:36px;
+               display:flex; justify-content:space-between; align-items:flex-end;
+               gap:32px; flex-wrap:wrap; }
+  .next h3 { font-family:'Noto Serif KR',serif; font-weight:600; font-size:20px;
+             line-height:1.6; word-break:keep-all; }
+  .next p { margin-top:10px; font-weight:300; font-size:13.5px; line-height:1.95;
+            color:var(--mute); max-width:34em; word-break:keep-all; }
+  .next a { font-size:15px; font-weight:500; letter-spacing:.04em; color:var(--accent);
+            border-bottom:1px solid var(--accent); padding-bottom:2px;
+            display:inline-block; transition:transform .25s ease; white-space:nowrap; }
+  .next a:hover { transform:translateX(4px); }
+
+  footer { border-top:1px solid var(--hair); padding:26px 0 60px;
+           font-size:11.5px; line-height:2; color:var(--mute); }
+
+  @media (max-width:640px) {
+    .head { padding:8vh 0 6vh; }
+    .grid { grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:48px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="mast">
+    <span class="brand">틈<span>|</span>숨과 쉼 사이</span>
+    <a class="home" href="./">구독하기 →</a>
+  </div>
+
+  <div class="head">
+    <h1 class="serif">지난 편지</h1>
+    <p class="sub">틈이 보낸 편지들입니다. 한 통에 감각 하나씩,
+       5분이면 되는 아주 작은 처방을 하나씩 담았습니다.</p>
+  </div>
+
+  <div class="season-head">
+    <h2 class="serif">시즌 1 — 여름 감각 다이빙</h2>
+    <span class="meta">6편 · 2026</span>
+  </div>
+
+  <div class="grid">
+
+    <a class="card" href="letter-01.html">
+      <div class="cover">
+        <svg viewBox="0 0 1000 1240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path class="line" style="stroke:#A6E22E" d="M -180,470 C 180,250 470,250 640,470 C 780,650 950,620 1200,470"/>
+        </svg>
+        <div class="folio"><span>틈</span><span>시각</span></div>
+        <div class="ct serif">오늘, 초록을<br>본 적이 있나요?</div>
+        <div class="cno serif">No.01</div>
+      </div>
+      <div class="info">
+        <div class="sense">시 각</div>
+        <p class="desc">하루 종일 무언가를 보고 있었는데, 정작 눈이 쉰 순간은 없었습니다.</p>
+        <span class="go">편지 읽기 →</span>
+      </div>
+    </a>
+
+    <a class="card" href="letter-02.html">
+      <div class="cover">
+        <svg viewBox="0 0 1000 1240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path class="line" style="stroke:#2F9BC4" d="M -180,470 C 180,250 470,250 640,470 C 780,650 950,620 1200,470"/>
+        </svg>
+        <div class="folio"><span>틈</span><span>촉각</span></div>
+        <div class="ct serif">물에 손을<br>담가본 게 언제인가요?</div>
+        <div class="cno serif">No.02</div>
+      </div>
+      <div class="info">
+        <div class="sense">촉 각</div>
+        <p class="desc">만진 것은 많았는데, 만졌다는 느낌은 없었습니다.</p>
+        <span class="go">편지 읽기 →</span>
+      </div>
+    </a>
+
+    <a class="card" href="letter-03.html">
+      <div class="cover">
+        <svg viewBox="0 0 1000 1240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path class="line" style="stroke:#4E58B0" d="M -180,470 C 180,250 470,250 640,470 C 780,650 950,620 1200,470"/>
+        </svg>
+        <div class="folio"><span>틈</span><span>청각</span></div>
+        <div class="ct serif">빗소리를 끝까지<br>들어본 적 있나요?</div>
+        <div class="cno serif">No.03</div>
+      </div>
+      <div class="info">
+        <div class="sense">청 각</div>
+        <p class="desc">듣고 있었지만, 듣지는 않았습니다.</p>
+        <span class="go">편지 읽기 →</span>
+      </div>
+    </a>
+
+    <a class="card" href="letter-04.html">
+      <div class="cover">
+        <svg viewBox="0 0 1000 1240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path class="line" style="stroke:#E2566A" d="M -180,470 C 180,250 470,250 640,470 C 780,650 950,620 1200,470"/>
+        </svg>
+        <div class="folio"><span>틈</span><span>미각·후각</span></div>
+        <div class="ct serif">수박의 첫 입,<br>기억하세요?</div>
+        <div class="cno serif">No.04</div>
+      </div>
+      <div class="info">
+        <div class="sense">미 각 · 후 각</div>
+        <p class="desc">한 통을 다 먹었는데, 맛은 첫 입에만 있었습니다.</p>
+        <span class="go">편지 읽기 →</span>
+      </div>
+    </a>
+
+    <a class="card" href="letter-05.html">
+      <div class="cover">
+        <svg viewBox="0 0 1000 1240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path class="line" style="stroke:#E8A13C" d="M -180,470 C 180,250 470,250 640,470 C 780,650 950,620 1200,470"/>
+        </svg>
+        <div class="folio"><span>틈</span><span>온도</span></div>
+        <div class="ct serif">그늘과 볕의 경계를<br>밟아본 적 있나요?</div>
+        <div class="cno serif">No.05</div>
+      </div>
+      <div class="info">
+        <div class="sense">온 도</div>
+        <p class="desc">더위는 잘 피하고 있었는데, 여름은 느끼지 못하고 있었습니다.</p>
+        <span class="go">편지 읽기 →</span>
+      </div>
+    </a>
+
+    <a class="card" href="letter-06.html">
+      <div class="cover">
+        <svg viewBox="0 0 1000 1240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path class="line" style="stroke:#3AA394" d="M -180,470 C 180,250 470,250 640,470 C 780,650 950,620 1200,470"/>
+        </svg>
+        <div class="folio"><span>틈</span><span>이름 없는 감각</span></div>
+        <div class="ct serif">물 위에<br>누워본 적 있나요?</div>
+        <div class="cno serif">No.06</div>
+      </div>
+      <div class="info">
+        <div class="sense">이 름 없 는 감 각</div>
+        <p class="desc">힘을 빼면 가라앉을 줄 알았는데, 힘을 빼야 뜨더라고요.</p>
+        <span class="go">편지 읽기 →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="next">
+    <div class="box">
+      <div>
+        <h3 class="serif">시즌 2를 준비하고 있습니다.</h3>
+        <p>새로운 감각으로 다시 찾아옵니다. 구독하시면 첫 편지부터 받아보실 수 있어요.</p>
+      </div>
+      <a href="./">틈 구독하기 →</a>
+    </div>
+  </div>
+
+  <footer>
+    틈 — 숨과 쉼 사이의 편지 · 글 · 올리한나
+  </footer>
+
+</div>
+</body>
+</html>
