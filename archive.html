@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#F5F1EA">
-<meta name="description" content="틈이 그동안 보낸 틈들. 시즌 1 여름 감각 다이빙, 여섯 틈.">
+<meta name="description" content="지금까지의 틈들. 시즌 1 여름 감각 다이빙, 여섯 틈.">
 <title>틈 — 지난 틈</title>
 <link rel="canonical" href="https://injoyfull.github.io/teum/archive.html">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -15,13 +15,13 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:url" content="https://injoyfull.github.io/teum/archive.html">
 <meta property="og:title" content="틈 — 지난 틈">
-<meta property="og:description" content="틈이 그동안 보낸 틈들. 시즌 1 여름 감각 다이빙, 여섯 틈.">
+<meta property="og:description" content="지금까지의 틈들. 시즌 1 여름 감각 다이빙, 여섯 틈.">
 <meta property="og:image" content="https://injoyfull.github.io/teum/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="틈 — 지난 틈">
-<meta name="twitter:description" content="틈이 그동안 보낸 틈들. 시즌 1 여름 감각 다이빙, 여섯 틈.">
+<meta name="twitter:description" content="지금까지의 틈들. 시즌 1 여름 감각 다이빙, 여섯 틈.">
 <meta name="twitter:image" content="https://injoyfull.github.io/teum/assets/og.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -48,9 +48,10 @@
   .mast a.home:hover { color:var(--accent); }
 
   /* ── 표제 ── */
-  .head { padding:12vh 0 9vh; }
+  .head { padding:11vh 0 8vh; }
   .head h1 { font-family:'Noto Serif KR',serif; font-weight:300;
              font-size:clamp(56px,11vw,112px); line-height:1; letter-spacing:-.01em; }
+  .head h1 .dot { color:var(--accent); }
   .head .sub { margin-top:1.6rem; font-weight:300; font-size:15px; line-height:2;
                color:var(--ink-soft); max-width:30em; word-break:keep-all; }
 
@@ -60,22 +61,23 @@
   .season-head h2 { font-family:'Noto Serif KR',serif; font-weight:600; font-size:19px; }
   .season-head .meta { font-size:11px; letter-spacing:.22em; color:var(--mute); }
 
-  /* ── 표지 격자 ── */
+  /* ── 표지 격자: 틈마다 자기 감각으로 논다 ── */
   .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
           gap:64px 30px; padding-bottom:10vh; }
   .card { display:block; }
   .card .cover { position:relative; aspect-ratio:5/6.2; overflow:hidden;
-                 background:var(--paper); border:1px solid var(--hair);
-                 transition:border-color .3s ease; }
+                 border-radius:18px; transition:transform .35s ease, box-shadow .35s ease; }
   .card .cover svg { position:absolute; inset:0; width:100%; height:100%; display:block; }
-  .card .cover .folio { position:absolute; top:15px; left:17px; right:17px;
+  .card .cover .folio { position:absolute; top:16px; left:18px; right:18px;
                         display:flex; justify-content:space-between; align-items:baseline;
                         font-size:9.5px; letter-spacing:.14em; color:var(--ink); }
   .card .cover .folio .fno { font-family:'Noto Serif KR',serif; font-weight:600;
                              font-size:12px; letter-spacing:0; }
-  .card .cover .ct { position:absolute; left:17px; right:17px; bottom:24px;
+  .card .cover .ct { position:absolute; left:18px; right:18px; bottom:22px;
                      font-family:'Noto Serif KR',serif; font-weight:300;
-                     font-size:clamp(17px,1.5vw,21px); line-height:1.32; word-break:keep-all; }
+                     font-size:clamp(18px,1.6vw,22px); line-height:1.36; word-break:keep-all; }
+  .card .cover .ct em { font-style:normal; font-weight:600; }
+  .card:hover .cover { transform:translateY(-5px); box-shadow:0 14px 30px rgba(26,24,23,.10); }
 
   .card .info { margin-top:16px; }
   .card .info .sense { font-size:10.5px; letter-spacing:.24em; color:var(--mute); }
@@ -84,7 +86,6 @@
   .card .info .go { display:inline-block; margin-top:12px; font-size:13px; font-weight:500;
                     letter-spacing:.04em; color:var(--accent);
                     transition:transform .25s ease; }
-  .card:hover .cover { border-color:var(--ink); }
   .card:hover .info .go { transform:translateX(4px); }
 
   /* ── 다음 시즌 ── */
@@ -119,7 +120,7 @@
   </div>
 
   <div class="head">
-    <h1 class="serif">지난 틈</h1>
+    <h1 class="serif">지난 틈<span class="dot">.</span></h1>
     <p class="sub">지금까지 여섯 틈을 보냈습니다. 한 틈에 감각 하나씩,
        5분이면 되는 아주 작은 처방을 담았어요.</p>
   </div>
@@ -131,15 +132,15 @@
 
   <div class="grid">
 
+    <!-- 01 시각 · 초록: 잎사귀 덩어리 둘 -->
     <a class="card" href="letter-01.html">
-      <div class="cover">
-        <svg viewBox="0 0 500 620" preserveAspectRatio="none" aria-hidden="true">
-          <rect x="228" y="0" width="16" height="430" rx="8" fill="#A6E22E"/>
-          <rect x="256" y="0" width="16" height="430" rx="8" fill="#A6E22E"/>
-          <circle cx="250" cy="215" r="11" fill="#E85D1C"/>
+      <div class="cover" style="background:#ECF3D9">
+        <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path fill="#A6E22E" d="M336,78 C424,64 486,138 470,216 C454,294 372,332 292,310 C212,288 184,210 218,142 C244,92 282,86 336,78 Z"/>
+          <path fill="#A6E22E" opacity=".45" d="M120,330 C174,308 224,344 218,398 C212,452 158,480 110,460 C62,440 52,384 76,356 C90,340 102,337 120,330 Z"/>
         </svg>
         <div class="folio"><span>틈</span><span class="fno serif">No.01</span></div>
-        <div class="ct serif">오늘, 초록을<br>본 적이 있나요?</div>
+        <div class="ct serif">오늘, <em style="color:#6E9A1B">초록</em>을<br>본 적이 있나요?</div>
       </div>
       <div class="info">
         <div class="sense">시 각</div>
@@ -148,15 +149,17 @@
       </div>
     </a>
 
+    <!-- 02 촉각 · 물: 손끝이 만든 파문 -->
     <a class="card" href="letter-02.html">
-      <div class="cover">
-        <svg viewBox="0 0 500 620" preserveAspectRatio="none" aria-hidden="true">
-          <rect x="228" y="0" width="16" height="430" rx="8" fill="#2F9BC4"/>
-          <rect x="256" y="0" width="16" height="430" rx="8" fill="#2F9BC4"/>
-          <circle cx="250" cy="215" r="11" fill="#E85D1C"/>
+      <div class="cover" style="background:#E2EFF6">
+        <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <circle cx="235" cy="225" r="118" fill="none" stroke="#2F9BC4" stroke-width="10" opacity=".45"/>
+          <circle cx="235" cy="225" r="78" fill="none" stroke="#2F9BC4" stroke-width="12" opacity=".7"/>
+          <circle cx="235" cy="225" r="40" fill="none" stroke="#2F9BC4" stroke-width="14"/>
+          <circle cx="235" cy="225" r="10" fill="#2F9BC4"/>
         </svg>
         <div class="folio"><span>틈</span><span class="fno serif">No.02</span></div>
-        <div class="ct serif">물에 손을<br>담가본 게 언제인가요?</div>
+        <div class="ct serif"><em style="color:#22759A">물</em>에 손을<br>담가본 게 언제인가요?</div>
       </div>
       <div class="info">
         <div class="sense">촉 각</div>
@@ -165,15 +168,21 @@
       </div>
     </a>
 
+    <!-- 03 청각 · 비: 굵기가 다른 빗줄기 -->
     <a class="card" href="letter-03.html">
-      <div class="cover">
-        <svg viewBox="0 0 500 620" preserveAspectRatio="none" aria-hidden="true">
-          <rect x="228" y="0" width="16" height="430" rx="8" fill="#4E58B0"/>
-          <rect x="256" y="0" width="16" height="430" rx="8" fill="#4E58B0"/>
-          <circle cx="250" cy="215" r="11" fill="#E85D1C"/>
+      <div class="cover" style="background:#E8EAF6">
+        <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect x="84" y="66" width="14" height="150" rx="7" fill="#4E58B0"/>
+          <rect x="166" y="152" width="14" height="100" rx="7" fill="#4E58B0" opacity=".65"/>
+          <rect x="248" y="46" width="14" height="190" rx="7" fill="#4E58B0"/>
+          <rect x="330" y="168" width="14" height="120" rx="7" fill="#4E58B0" opacity=".65"/>
+          <rect x="412" y="76" width="14" height="150" rx="7" fill="#4E58B0"/>
+          <rect x="125" y="316" width="14" height="70" rx="7" fill="#4E58B0" opacity=".35"/>
+          <rect x="288" y="306" width="14" height="90" rx="7" fill="#4E58B0" opacity=".35"/>
+          <rect x="372" y="330" width="14" height="60" rx="7" fill="#4E58B0" opacity=".35"/>
         </svg>
         <div class="folio"><span>틈</span><span class="fno serif">No.03</span></div>
-        <div class="ct serif">빗소리를 끝까지<br>들어본 적 있나요?</div>
+        <div class="ct serif"><em style="color:#4E58B0">빗소리</em>를 끝까지<br>들어본 적 있나요?</div>
       </div>
       <div class="info">
         <div class="sense">청 각</div>
@@ -182,15 +191,19 @@
       </div>
     </a>
 
+    <!-- 04 미각·후각 · 수박: 씨까지 그대로 -->
     <a class="card" href="letter-04.html">
-      <div class="cover">
-        <svg viewBox="0 0 500 620" preserveAspectRatio="none" aria-hidden="true">
-          <rect x="228" y="0" width="16" height="430" rx="8" fill="#E2566A"/>
-          <rect x="256" y="0" width="16" height="430" rx="8" fill="#E2566A"/>
-          <circle cx="250" cy="215" r="11" fill="#E85D1C"/>
+      <div class="cover" style="background:#FBE9EC">
+        <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path d="M100,210 A150,150 0 0 0 400,210" fill="none" stroke="#A6E22E" stroke-width="12"/>
+          <path d="M114,210 A136,136 0 0 0 386,210 Z" fill="#E2566A"/>
+          <ellipse cx="205" cy="268" rx="4.5" ry="7" fill="#1A1817" transform="rotate(18 205 268)"/>
+          <ellipse cx="252" cy="300" rx="4.5" ry="7" fill="#1A1817"/>
+          <ellipse cx="298" cy="264" rx="4.5" ry="7" fill="#1A1817" transform="rotate(-20 298 264)"/>
+          <ellipse cx="232" cy="240" rx="4.5" ry="7" fill="#1A1817" transform="rotate(-8 232 240)"/>
         </svg>
         <div class="folio"><span>틈</span><span class="fno serif">No.04</span></div>
-        <div class="ct serif">수박의 첫 입,<br>기억하세요?</div>
+        <div class="ct serif"><em style="color:#E2566A">수박</em>의 첫 입,<br>기억하세요?</div>
       </div>
       <div class="info">
         <div class="sense">미 각 · 후 각</div>
@@ -199,15 +212,15 @@
       </div>
     </a>
 
+    <!-- 05 온도 · 그늘과 볕: 볕 하나, 그늘 한 자락 -->
     <a class="card" href="letter-05.html">
-      <div class="cover">
-        <svg viewBox="0 0 500 620" preserveAspectRatio="none" aria-hidden="true">
-          <rect x="228" y="0" width="16" height="430" rx="8" fill="#E8A13C"/>
-          <rect x="256" y="0" width="16" height="430" rx="8" fill="#E8A13C"/>
-          <circle cx="250" cy="215" r="11" fill="#E85D1C"/>
+      <div class="cover" style="background:#F7EDDC">
+        <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <circle cx="322" cy="178" r="112" fill="#E8A13C"/>
+          <rect x="-80" y="330" width="480" height="106" rx="53" fill="#4A4668" transform="rotate(-14 160 383)"/>
         </svg>
         <div class="folio"><span>틈</span><span class="fno serif">No.05</span></div>
-        <div class="ct serif">그늘과 볕의 경계를<br>밟아본 적 있나요?</div>
+        <div class="ct serif"><em style="color:#4A4668">그늘</em>과 <em style="color:#D18A1F">볕</em>의 경계를<br>밟아본 적 있나요?</div>
       </div>
       <div class="info">
         <div class="sense">온 도</div>
@@ -216,15 +229,17 @@
       </div>
     </a>
 
+    <!-- 06 이름 없는 감각 · 부력: 물 위에 뜬 동그라미 -->
     <a class="card" href="letter-06.html">
-      <div class="cover">
-        <svg viewBox="0 0 500 620" preserveAspectRatio="none" aria-hidden="true">
-          <rect x="228" y="0" width="16" height="430" rx="8" fill="#3AA394"/>
-          <rect x="256" y="0" width="16" height="430" rx="8" fill="#3AA394"/>
-          <circle cx="250" cy="215" r="11" fill="#E85D1C"/>
+      <div class="cover" style="background:#E1F0EC">
+        <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect x="0" y="310" width="500" height="310" fill="#3AA394" opacity=".16"/>
+          <rect x="-20" y="300" width="540" height="14" rx="7" fill="#3AA394"/>
+          <circle cx="250" cy="298" r="72" fill="#F5F1EA" stroke="#3AA394" stroke-width="10"/>
+          <circle cx="250" cy="298" r="10" fill="#E85D1C"/>
         </svg>
         <div class="folio"><span>틈</span><span class="fno serif">No.06</span></div>
-        <div class="ct serif">물 위에<br>누워본 적 있나요?</div>
+        <div class="ct serif"><em style="color:#2E8578">물 위</em>에<br>누워본 적 있나요?</div>
       </div>
       <div class="info">
         <div class="sense">이 름 없 는 감 각</div>
