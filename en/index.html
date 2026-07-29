@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#F5F1EA">
-<meta name="description" content="틈 — 숨과 쉼 사이, 우리에게 주어진 그 틈을 누리는 편지. 2주에 한 번, 감각 하나와 조약돌처럼 작은 해보기 하나.">
-<title>틈 — 숨과 쉼 사이의 편지</title>
-<link rel="canonical" href="https://injoyfull.github.io/teum/">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="description" content="Teum — a letter from the space between breaths. Every two weeks: one sense, and one pebble small enough to drop into your day.">
+<title>Teum — a letter from the space between breaths</title>
+<link rel="canonical" href="https://injoyfull.github.io/teum/en/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="틈">
-<meta property="og:locale" content="ko_KR">
-<meta property="og:url" content="https://injoyfull.github.io/teum/">
-<meta property="og:title" content="틈 — 숨과 쉼 사이의 편지">
-<meta property="og:description" content="2주에 한 번, 마음에 작은 파동을 일으키는 조약돌 하나를 건넵니다.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:url" content="https://injoyfull.github.io/teum/en/">
+<meta property="og:title" content="Teum — a letter from the space between breaths">
+<meta property="og:description" content="Every two weeks: one sense, and one pebble small enough to leave a ripple.">
 <meta property="og:image" content="https://injoyfull.github.io/teum/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="틈 — 숨과 쉼 사이의 편지">
-<meta name="twitter:description" content="2주에 한 번, 마음에 작은 파동을 일으키는 조약돌 하나를 건넵니다.">
+<meta name="twitter:title" content="Teum — a letter from the space between breaths">
+<meta name="twitter:description" content="Every two weeks: one sense, and one pebble small enough to leave a ripple.">
 <meta name="twitter:image" content="https://injoyfull.github.io/teum/assets/og.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;900&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -87,6 +88,10 @@
   .mast .brand span { color:var(--mute); font-weight:300; margin:0 6px; }
   .mast .lang { color:var(--accent); text-decoration:none;
                 border-bottom:1px solid var(--accent); padding-bottom:1px; letter-spacing:.08em; }
+  /* 영문판: word-break:keep-all 은 한국어 전용 규칙이므로 해제한다 */
+  .tagline, .lede, .issue-body h2, .issue-body .desc, .rhythm-item h3, .rhythm-item p,
+  .closing p, .season-item .st, .season-more { word-break:normal; }
+  .lede i, .lede em { font-style:italic; }
 
   header { padding-top:10vh; }
   /* 로고 — 꽉 찬 덩어리에 새겨진 얇은 틈 (매니페스토: 빈틈없는 세상에서 틈을 편든다) */
@@ -218,7 +223,7 @@
   <div class="intro-stage">
     <span id="iSum">숨</span><span id="iMid"><span id="iColon">:</span><span id="iDot"></span><span id="iTeum">틈</span></span><span id="iSwim">쉼</span>
   </div>
-  <p class="intro-hint">숨과 쉼 사이 · 화면을 누르면 건너뜁니다</p>
+  <p class="intro-hint">breath &nbsp;·&nbsp; rest &nbsp;—&nbsp; tap anywhere to skip</p>
 </div>
 
 <!-- 아주 굵은 단 하나의 길 -->
@@ -231,8 +236,8 @@
 <div class="wrap">
 
   <div class="mast">
-    <span class="brand">틈<span>|</span>숨과 쉼 사이</span>
-    <span>시즌 1 · 여름 감각 다이빙 &nbsp;<a class="lang" href="en/">EN</a></span>
+    <span class="brand">Teum<span>|</span>between breath and rest</span>
+    <span>Season 1 · Summer Sense Diving &nbsp;<a class="lang" href="../">한국어</a></span>
   </div>
 
   <header>
@@ -246,222 +251,90 @@
         </g>
       </svg>
     </h1>
-    <p class="tagline serif">들이쉬고 내쉬는 사이,<br>잠깐 틈이 느껴지시나요?</p>
+    <p class="tagline serif">Breathe in. Breathe out.<br>Did you feel the gap between?</p>
     <p class="lede">
-      커피를 다 마시고도 무슨 맛이었는지 기억나지 않는 날이 있지요.
-      눈은 하루 종일 뜨고 있었는데, 본 것은 없는 날도요.
-      그런 날에도 숨과 쉼 사이에는 틈이 있어요. 아주 작지만, 분명히요.
-      <b>틈</b>은 그 틈을 누리시기를 바라며 보내는 편지입니다.
-      2주에 한 번, 감각 하나와 조약돌 하나를 담아서요.
-      마음에 퐁, 하고 던져져 작은 파동을 일으키는 — 딱 그만큼의 것들이요.
-      잘 지내시는지, 안부를 묻는 마음으로 보냅니다.
+      Some days you finish your coffee and can't recall the taste.
+      Some days your eyes are open from morning to night, and you haven't really seen a thing.
+      Even on those days, there is a gap between breathing and resting. Small, but it is there.
+      <b>Teum</b> <i>(틈)</i> is the Korean word for that gap — and this is a letter
+      sent in the hope that you will enjoy yours.
+      Once every two weeks: one sense, and one pebble.
+      Small enough to drop into your day and leave a ripple. Nothing heavier than that.
+      It comes the way you would ask after a friend — <em>how have you been?</em>
     </p>
     <div class="subscribe">
       <!-- 스티비 연결 지점.
            STIBEE_ACTION 에 주소록 > 구독 폼 > [코드로 설치하기] 의 form action 주소를 넣으면
            이 폼이 그대로 스티비로 전송됩니다. 디자인은 지금 그대로 유지됩니다.
            (아래 숨은 iframe 으로 전송해 페이지 이동 없이, CORS 영향도 받지 않습니다) -->
-      <iframe name="stibeeSink" id="stibeeSink" style="display:none" title="구독 전송" aria-hidden="true"></iframe>
+      <iframe name="stibeeSink" id="stibeeSink" style="display:none" title="subscribe" aria-hidden="true"></iframe>
       <form id="subForm" method="post" target="stibeeSink">
-        <input type="email" name="email" required placeholder="이메일을 적어주세요" aria-label="이메일 주소" autocomplete="email" inputmode="email">
-        <button type="submit">구독하기 →</button>
+        <input type="email" name="email" required placeholder="Your email address" aria-label="Email address" autocomplete="email" inputmode="email">
+        <button type="submit">Subscribe →</button>
       </form>
       <label class="consent" id="consentRow">
         <input type="checkbox" id="subConsent" form="subForm" required aria-describedby="consentDetail">
-        <span>(필수) <button type="button" class="link" id="consentToggle" aria-expanded="false" aria-controls="consentDetail">개인정보 수집·이용</button>에 동의합니다.</span>
+        <span>(required) I agree to the <button type="button" class="link" id="consentToggle" aria-expanded="false" aria-controls="consentDetail">collection and use of my email</button>.</span>
       </label>
       <div class="consent-detail" id="consentDetail">
-        뉴스레터 발송을 위한 최소한의 개인정보(이메일 주소)를 수집하고 이용합니다.
-        수집된 정보는 발송 외 다른 목적으로 이용되지 않으며,
-        서비스가 종료되거나 구독을 해지할 경우 즉시 파기됩니다.
+        We collect only your email address, and only to send you this letter.
+        It is never used for anything else and never shared. If you unsubscribe,
+        or if the letter ends, it is deleted right away.
       </div>
-      <p class="form-done serif" id="subDoneMsg">고맙습니다. 첫 틈이 곧 갈게요.</p>
-      <p class="form-note">2주에 한 번. 광고 없이, 조용히. 언제든 떠나셔도 괜찮아요.</p>
+      <p class="form-done serif" id="subDoneMsg">Thank you. Your first teum is on its way.</p>
+      <p class="form-note">One letter every two weeks. No ads, no noise. Leave whenever you like.</p>
     </div>
   </header>
 
   <section class="issue reveal">
-    <p class="overline">첫 번째 틈 — 시각 편</p>
+    <p class="overline">The first teum — Sight</p>
     <div class="issue-grid">
       <div class="issue-no">01</div>
       <div class="issue-body">
-        <h2 class="serif">오늘, 초록을<br>본 적이 있나요?</h2>
-        <p class="desc">여름, 초록이 일 년 중 가장 짙어지는 계절.
-           눈이 쉬는 5분에 대한 첫 번째 틈입니다.
-           맛보기로 활짝 열어두었어요.</p>
-        <a class="read" href="letter-01.html">틈 열기 →</a>
+        <h2 class="serif">Have you seen<br>green today?</h2>
+        <p class="desc">Summer, when green is deepest. A first teum about five minutes of rest for your eyes. This one is open to read — no subscription needed.</p>
+        <a class="read" href="letter-01.html">Open this teum →</a>
       </div>
     </div>
   </section>
 
   <section class="season reveal">
-    <p class="overline">시즌 1 — 여름 감각 다이빙</p>
+    <p class="overline">Season 1 — Summer Sense Diving</p>
     <a class="season-item" href="letter-01.html">
-      <span class="sn">01</span><span class="st">오늘, 초록을 본 적이 있나요?</span><span class="ss">시각</span></a>
+      <span class="sn">01</span><span class="st">Have you seen green today?</span><span class="ss">Sight</span></a>
     <div class="season-item locked">
-      <span class="sn">02</span><span class="st">물에 손을 담가본 게 언제인가요?</span><span class="ss">촉각</span></div>
+      <span class="sn">02</span><span class="st">When did you last put your hand in water?</span><span class="ss">Touch</span></div>
     <div class="season-item locked">
-      <span class="sn">03</span><span class="st">빗소리를 끝까지 들어본 적 있나요?</span><span class="ss">청각</span></div>
+      <span class="sn">03</span><span class="st">Have you listened to rain all the way to the end?</span><span class="ss">Sound</span></div>
     <div class="season-item locked">
-      <span class="sn">04</span><span class="st">수박의 첫 입, 기억하세요?</span><span class="ss">미각·후각</span></div>
+      <span class="sn">04</span><span class="st">Do you remember the first bite of watermelon?</span><span class="ss">Taste &amp; Smell</span></div>
     <div class="season-item locked">
-      <span class="sn">05</span><span class="st">그늘과 볕의 경계를 밟아본 적 있나요?</span><span class="ss">온도</span></div>
+      <span class="sn">05</span><span class="st">Have you stood where shade meets sun?</span><span class="ss">Temperature</span></div>
     <div class="season-item locked">
-      <span class="sn">06</span><span class="st">물 위에 누워본 적 있나요?</span><span class="ss">이름 없는 감각</span></div>
-    <p class="season-more">01은 맛보기로 열어두었어요.
-      나머지 다섯 틈은 <b>2주에 하나씩, 메일로만</b> 찾아갑니다.</p>
+      <span class="sn">06</span><span class="st">Have you ever floated on water?</span><span class="ss">The sense with no name</span></div>
+    <p class="season-more">No.01 is open to read. The other five arrive <b>by email only — one every two weeks.</b></p>
   </section>
 
   <section class="rhythm">
-    <p class="overline">틈의 리듬</p>
+    <p class="overline">How Teum works</p>
     <div class="rhythm-item reveal"><div class="rhythm-no">01</div>
-      <div><h3 class="serif">2주에 한 번, 하나의 감각</h3>
-        <p>색, 촉감, 소리, 맛, 냄새 — 그리고 그 사이의 이름 없는 감각들.
-           한 번에 한 감각만 다룹니다. 계절이 아니라, 오늘 느낄 수 있는 것으로.</p></div></div>
+      <div><h3 class="serif">One sense, every two weeks</h3>
+        <p>Color, texture, sound, taste, smell — and the ones in between that have no name. One sense at a time. Not about the season, but about what you can feel today.</p></div></div>
     <div class="rhythm-item reveal"><div class="rhythm-no">02</div>
-      <div><h3 class="serif">조약돌 하나</h3>
-        <p>거창하면 안 하게 되잖아요. 눈 감고 첫 한 입, 이어폰 없이 열 걸음 —
-           마음에 퐁 던지면 작은 파동이 남는, 그만큼 작은 것들만 담아요.</p></div></div>
+      <div><h3 class="serif">One pebble</h3>
+        <p>If it's grand, you won't do it. The first bite with your eyes closed. Ten steps without earphones. Small things — dropped in gently, leaving a ripple.</p></div></div>
     <div class="rhythm-item reveal"><div class="rhythm-no">03</div>
-      <div><h3 class="serif">어느 독자의 감각</h3>
-        <p>편지에 답장하면, 당신이 깨어난 순간이 다음 편지에 익명으로 실립니다.
-           혼자 읽는 잡지가 아니라 함께 깨어나는 잡지가 됩니다.</p></div></div>
+      <div><h3 class="serif">A reader's sense</h3>
+        <p>Reply to any letter, and the moment you woke up can appear in the next one, anonymously. Not a letter you read alone, but one we wake up in together.</p></div></div>
   </section>
 
   <section class="closing reveal">
-    <p class="serif">정지한 것처럼 보여도,<br>자세히 보면 움직이는 것이 있습니다.<br>
-      <span style="color:var(--accent)">당신 안에도요.</span></p>
-    <p class="sig">— 올리한나 드림</p>
+    <p class="serif">Even what looks still<br>is moving, if you look closely.<br>
+      <span style="color:var(--accent)">Something in you, too.</span></p>
+    <p class="sig">— oLiHANNA</p>
   </section>
 
   <footer>
-    <span>틈 — 숨과 쉼 사이의 편지</span>
-    <span>글 · 올리한나</span>
-    <span>hello@teum.letter (준비 중)</span>
-  </footer>
-</div>
-
-<script>
-  // 인트로: 숨:쉼 → 사이가 벌어지며 :이 흩어지고 → 점 하나가 중앙에 → 다 사라지고 틈만 (세션당 1회, 클릭 시 건너뜀)
-  (function () {
-    const intro = document.getElementById('intro');
-    const sum = document.getElementById('iSum');
-    const swim = document.getElementById('iSwim');
-    const mid = document.getElementById('iMid');
-    const colon = document.getElementById('iColon');
-    const dot = document.getElementById('iDot');
-    const teum = document.getElementById('iTeum');
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const seen = sessionStorage.getItem('teum-intro');
-    const finish = () => { intro.classList.add('done'); sessionStorage.setItem('teum-intro', '1'); };
-    if (!intro) return;
-    if (reduced || seen) { intro.style.transition = 'none'; finish(); return; }
-    let skipped = false;
-    intro.addEventListener('click', () => { skipped = true; finish(); });
-    const t = ms => new Promise(r => setTimeout(r, ms));
-    (async () => {
-      await t(500); if (skipped) return;
-      sum.style.opacity = 1;                              // 숨, 먼저
-      await t(1200); if (skipped) return;
-      swim.style.opacity = 1;                             // 쉼, 뒤따라
-      await t(1600); if (skipped) return;
-      colon.style.opacity = 1;                            // 숨:쉼
-      await t(1400); if (skipped) return;
-      mid.style.width = '2em';                            // 사이가 벌어진다
-      await t(1400); if (skipped) return;
-      colon.style.opacity = 0;                            // :은 흩어지고
-      await t(1300); if (skipped) return;
-      dot.style.opacity = 1;                              // 점 하나가 중앙에
-      await t(2200); if (skipped) return;
-      sum.style.opacity = 0; swim.style.opacity = 0;
-      dot.style.opacity = 0;                              // 다 사라지고
-      await t(1500); if (skipped) return;
-      teum.style.opacity = 1;                             // 틈만 남는다
-      await t(4200); if (skipped) return;                 // 가장 오래 머무는 장면
-      finish();
-    })();
-  })();
-
-  // 라인을 히어로 높이에 맞춘다 — 아래 읽는 구간은 깨끗하게
-  (function () {
-    const bg = document.querySelector('.space-bg'), header = document.querySelector('header');
-    if (!bg || !header) return;
-    const fit = () => { bg.style.height = (header.offsetTop + header.offsetHeight) + 'px'; };
-    fit(); window.addEventListener('resize', fit, { passive: true });
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
-  })();
-
-  // 제호의 점(.)은 열 때마다 다른 감각의 빛으로
-  (function () {
-    const dot = document.querySelector('h1 .dot');
-    if (!dot) return;
-    const colors = ['#E85D1C','#A6E22E','#E7C13E','#3F9E86','#3E86C9','#8E63C0','#D470A6','#E0573A'];
-    const roll = () => {
-      let c; do { c = colors[Math.floor(Math.random() * colors.length)]; } while (c === dot.dataset.last && colors.length > 1);
-      dot.dataset.last = c; dot.style.color = c;
-    };
-    roll(); window.addEventListener('pageshow', roll);
-  })();
-
-  const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('on')), { threshold: 0.2 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  /* ── 구독 폼 ───────────────────────────────────────────────────────────
-     연결하려면 STIBEE_ACTION 한 줄만 채우면 됩니다.
-     스티비 > 주소록 > 구독 관리 > 구독 폼 > [코드로 설치하기] 에서 나온
-     <form> 태그의 action="..." 주소를 그대로 붙여넣으세요.
-     (입력칸 name 이 'email' 이 아니라면 STIBEE_EMAIL_FIELD 도 맞춰주세요)
-
-     비워두면 지금처럼 화면만 완료 처리되고, 이메일은 어디에도 저장되지 않습니다. */
-  const STIBEE_ACTION      = 'https://stibee.com/api/v1.0/lists/lmzGo5_79bgjXdkenHlhVN9YAeMZjw==/public/subscribers';
-  const STIBEE_EMAIL_FIELD = 'email';
-
-  /* 스티비 주소록에서 '구독 확인 이메일'(더블 옵트인)을 켰다면 true 로 바꾸세요.
-     꺼져 있으면(현재 상태) 확인 메일이 가지 않고 곧바로 구독자로 등록됩니다.
-     이 값이 실제 설정과 다르면 독자에게 오지 않을 메일을 기다리게 만듭니다. */
-  const STIBEE_DOUBLE_OPTIN = false;
-
-  (function () {
-    const form    = document.getElementById('subForm');
-    const done    = document.getElementById('subDoneMsg');
-    const note    = document.querySelector('.form-note');
-    const input   = form.querySelector('input[type="email"]');
-    const consent = document.getElementById('subConsent');
-    const row     = document.getElementById('consentRow');
-    const detail  = document.getElementById('consentDetail');
-    const toggle  = document.getElementById('consentToggle');
-
-    if (STIBEE_ACTION) {
-      form.action = STIBEE_ACTION;
-      input.name  = STIBEE_EMAIL_FIELD;
-    }
-
-    // 개인정보 수집·이용 안내 펼치기 (체크박스 토글과 겹치지 않게 이벤트 차단)
-    toggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      const open = detail.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-
-    form.addEventListener('submit', function (e) {
-      if (!input.value.trim()) return;              // 브라우저 기본 검증에 맡김
-      if (!consent.checked) { e.preventDefault(); return; }   // 동의 없으면 전송 안 함
-
-      if (!STIBEE_ACTION) e.preventDefault();       // 미연결이면 전송하지 않음
-      // 연결된 경우: 기본 동작(숨은 iframe 으로 POST)을 그대로 두고 화면만 전환
-
-      form.style.display = 'none';
-      row.style.display = 'none';
-      detail.style.display = 'none';
-      done.style.display = 'block';
-      if (STIBEE_ACTION && note) {
-        note.textContent = STIBEE_DOUBLE_OPTIN
-          ? '확인 메일을 보냈어요. 메일함에서 구독을 완료해 주세요.'
-          : '구독이 완료되었어요. 2주에 한 번, 조용히 찾아갈게요.';   // 따뜻하게, 재촉 없이
-      }
-    });
-  })();
-</script>
-</body>
-</html>
+    <span>Teum — a letter from the space between breaths</span>
+    <span>Written by oLiHANNA</span>
+    <span>hello@teum.letter (coming soon)

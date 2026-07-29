@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F5F1EA">
+<meta name="description" content="Teum No.01 — Have you seen green today? On sight.">
+<title>Teum · No.01 — Have you seen green today?</title>
+<link rel="canonical" href="https://injoyfull.github.io/teum/en/letter-01.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Teum">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:url" content="https://injoyfull.github.io/teum/en/letter-01.html">
+<meta property="og:title" content="Teum No.01 — Have you seen green today?">
+<meta property="og:description" content="My eyes worked all day, and never once rested. On sight.">
+<meta property="og:image" content="https://injoyfull.github.io/teum/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Teum No.01 — Have you seen green today?">
+<meta name="twitter:description" content="My eyes worked all day, and never once rested. On sight.">
+<meta name="twitter:image" content="https://injoyfull.github.io/teum/assets/og.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;900&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:#F5F1EA; --ink:#1A1817; --ink-soft:#3B3733; --mute:#8A847A;
+    --line:#A6E22E;          /* 이번 호의 색 — 시각 편 · 초록 */
+    --accent:#E85D1C; --tint:#ECF3D9; --logo:#A6E22E;
+    --stroke:150;            /* 굵은 한 줄의 두께 */
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:var(--paper); color:var(--ink);
+    font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo',sans-serif;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  .serif { font-family:'Noto Serif KR','Nanum Myeongjo',serif; }
+  .page { max-width:720px; margin:0 auto; padding:40px 24px 0; }
+
+  /* ── 매거진 오프너: 폴리오 → 사진 → 제목 ── */
+  .folio { display:flex; justify-content:space-between; align-items:baseline;
+    padding:0 0 13px; border-bottom:1px solid var(--ink);
+    font-size:12px; letter-spacing:.14em; color:var(--ink); }
+  .folio .mast { font-family:'Noto Serif KR',serif; font-weight:600; }
+
+  /* 사진은 그대로 둔다 — 연결은 색과 도형 마크로 (선은 사진을 방해했다) */
+  .opener { position:relative; margin:30px 0 0; }
+  .opener img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block; border-radius:16px; }
+  .opener figcaption { margin-top:13px; font-size:12.5px; letter-spacing:.06em; color:var(--mute); }
+
+  .titleblock { margin:44px 0 0; }
+  .titleblock h1 { font-family:'Noto Serif KR',serif; font-weight:300;
+    font-size:clamp(34px,8.4vw,62px); line-height:1.24; letter-spacing:-.01em; word-break:keep-all; }
+  .titleblock .meta { display:flex; justify-content:space-between; align-items:center;
+    margin-top:26px; padding-top:14px; border-top:1px solid #DAD4C7;
+    font-size:12px; color:var(--mute); }
+  .titleblock .meta .right { display:flex; align-items:center; gap:11px; }
+  .titleblock .meta svg { width:21px; height:21px; display:block; }
+  .titleblock .meta .no { font-family:'Noto Serif KR',serif; font-weight:600;
+    font-size:19px; color:var(--ink); }
+
+  /* ── 본문 ── */
+  article { padding:72px 0 0; }
+  .kicker { font-size:12px; letter-spacing:.22em; color:var(--mute); margin-bottom:16px; }
+  .lead {
+    font-family:'Noto Serif KR',serif; font-weight:600;
+    font-size:clamp(23px,4.8vw,30px); line-height:1.55; word-break:keep-all; margin-bottom:38px;
+  }
+  p.body {
+    font-family:'Noto Serif KR',serif; font-weight:300; font-size:17px; line-height:2.15;
+    color:var(--ink-soft); word-break:keep-all; margin:0 0 28px;
+  }
+  p.body b { font-weight:600; color:var(--ink); }
+  h3.sub {
+    font-family:'Noto Serif KR',serif; font-weight:600; font-size:21px;
+    margin:44px 0 18px; word-break:keep-all;
+  }
+  .rule { width:56px; height:8px; border-radius:4px; background:var(--line); margin:52px 0; }
+  .sign { font-size:13px; color:var(--mute); margin-top:6px; }
+
+
+  .rx { margin:52px 0; padding:34px 30px; background:#EFF3E6; border-radius:16px; }
+  .rx .tag { font-size:12px; letter-spacing:.2em; color:var(--mute); margin-bottom:10px; }
+  .rx h4 { font-family:'Noto Serif KR',serif; font-weight:600; font-size:22px; margin-bottom:14px; word-break:keep-all; }
+  .rx p { font-size:15px; line-height:2; color:var(--ink-soft); word-break:keep-all; }
+  .rx p b { color:var(--ink); font-weight:500; }
+
+  .invite { margin:44px 0; padding:26px 0; border-top:1px solid #DAD4C7; border-bottom:1px solid #DAD4C7;
+            font-size:15px; line-height:1.95; color:var(--ink-soft); word-break:keep-all; }
+  .invite b { color:var(--ink); font-weight:500; }
+
+  .closing { margin:64px 0 0; }
+  .closing p { font-family:'Noto Serif KR',serif; font-weight:600; font-size:clamp(22px,5vw,28px); line-height:1.6; word-break:keep-all; }
+
+  .join { margin:64px 0 0; padding:30px 0 0; border-top:1px solid #DAD4C7; }
+  .join p { font-size:14px; line-height:1.95; color:var(--mute); word-break:keep-all; margin-bottom:14px; }
+  .join a { display:inline-block; font-size:15px; font-weight:500; letter-spacing:.04em;
+            color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent);
+            padding-bottom:2px; transition:transform .25s ease; }
+  .join a:hover { transform:translateX(4px); }
+  .join-sep { margin:0 12px; color:var(--mute); }
+  footer { margin-top:72px; padding:28px 0 64px; border-top:1px solid #DAD4C7; font-size:12px; line-height:2; color:var(--mute); }
+  footer a { color:var(--mute); }
+
+  /* ── 데스크톱 ──────────────────────────────────────────────
+     넓은 화면에서 좁은 한 단만 보이면 '모바일 화면'처럼 보인다.
+     표지는 화면을 쓰게 넓히고, 본문 글줄은 읽기 좋은 폭을 유지한다.
+     (긴 글은 한 줄이 너무 길면 눈이 다음 줄을 놓쳐 읽기 힘들어진다) */
+  @media (min-width:1000px) {
+    .page { max-width:1040px; padding:48px 40px 0; }
+    .opener img { aspect-ratio:2/1; }
+    .titleblock h1 { font-size:clamp(46px,4.4vw,70px); }
+    article { max-width:720px; margin:0 auto; padding:96px 0 0; }
+    p.body { font-size:18px; }
+    .lead { font-size:clamp(26px,2.4vw,32px); }
+  }
+
+  /* 영문판 — word-break:keep-all 은 한국어 전용이라 해제한다 */
+  .lead, p.body, h3.sub, .rx p, .rx h4, .invite, .closing p, .join p, .cover-title, h1 { word-break:normal; }
+  .folio .lang { color:var(--accent); text-decoration:none;
+                 border-bottom:1px solid var(--accent); padding-bottom:1px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="folio">
+    <span class="mast">Teum <span style="color:var(--mute); font-weight:300;">|</span> between breath and rest</span>
+    <span>Vol. 01 · Sight &nbsp;<a class="lang" href="../letter-01.html">한국어</a></span>
+  </div>
+
+  <figure class="opener">
+    <img src="../assets/discover-01.jpg" alt="Light resting between leaves">
+    <figcaption>An unexpected find — light resting between leaves</figcaption>
+  </figure>
+
+  <header class="titleblock">
+    <h1 class="serif">Have you seen<br>green today?</h1>
+    <div class="meta">
+      <span>Season 1 · Summer Sense Diving</span>
+      <span class="right">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="#A6E22E"/></svg>
+        <span class="no">No.01</span>
+      </span>
+    </div>
+  </header>
+
+  <article>
+    <p class="kicker">Season 1 Summer Sense Diving · This teum — Sight</p>
+    <p class="lead serif">My eyes worked all day,<br>and never once rested.</p>
+
+    <p class="body">
+      It happened in an elevator.
+      A ride of a few seconds, and there I was, already reaching for my phone.
+      Monitor to phone, phone back to monitor.
+      My eyes had been working all day without stopping. And yet nothing in them felt rested.
+    </p>
+    <p class="body">
+      So lately I ask myself one question.
+      <b>Have I seen green today?</b>
+      It is not a grand question.
+      Only this: did my eyes rest on something green, even for a moment?
+    </p>
+
+    <h3 class="sub serif">A color that does not try</h3>
+    <p class="body">
+      Green is a strange color.
+      It is not dazzling, yet it draws you. It is in no hurry, yet your eyes keep returning to it.
+      A tree does not try to look better today than yesterday.
+      It simply stands where it stood.
+      And somehow that indifference becomes rest.
+    </p>
+    <p class="body">
+      Maybe we have spent a long time proving things.
+      At work, in our relationships, even in the way we rest.
+      So when we stand before something that proves nothing at all, something in us lets go.
+    </p>
+
+    <h3 class="sub serif">You don't have to go far</h3>
+    <p class="body">
+      We travel far to recover. I have done it too.
+      But you notice something when you come home.
+      Recovery does not arrive at the end of a great decision.
+      It seeps in quietly, through the gaps of an ordinary day.
+    </p>
+    <p class="body">
+      The things we passed by because we were busy have not disappeared. They are exactly where they were.
+      The flower bed outside the office. The trees along the stream. One potted plant in a neighbor's window.
+      Summer is when all of that green is at its deepest.
+      <b>Which makes now the best time to ask.</b>
+    </p>
+    <p class="sign">— oLiHANNA</p>
+
+    <div class="rule"></div>
+
+    <div class="rx">
+      <p class="tag">This teum's pebble · Sight</p>
+      <h4 class="serif">Rest your eyes on green for five minutes</h4>
+      <p>
+        Pick one green thing today, anywhere, and let your eyes stay on it for five minutes.
+        A street tree on your way to work. A single tree outside your window. Either is fine.
+        Don't photograph it. Don't write anything down.
+        <b>Just look. That is all for today.</b>
+      </p>
+    </div>
+
+    <div class="invite">
+      For those five minutes, only look.
+      Afterwards, if you suddenly feel like telling someone, <b>reply</b> to this letter.
+      The green you stopped for could appear in the next one, under
+      <b>&lsquo;A reader's sense&rsquo;</b>, anonymously.
+    </div>
+
+    <div class="closing">
+      <p class="serif">Have you seen green today?<br>That is enough.</p>
+    </div>
+
+
+    <div class="join">
+      <p>Teum is a letter that brings one sense and one pebble, once every two weeks.<br>
+         No ads. Leave whenever you like.</p>
+      <a href="./">Subscribe to Teum →</a>
+    </div>
+
+    <footer>
+      Teum — a letter from the space between breaths · Season 1 Summer Sense Diving · No.01 Sight<br>
+      Written by oLiHANNA<br>
+      Next teum — Touch · When did you last put your hand in water?<br>
+      <a href="#">hello@teum.letter</a> (coming soon)
+    </footer>
+  </article>
+</div>
+</body>
+</html>
