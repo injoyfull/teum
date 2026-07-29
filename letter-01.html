@@ -46,12 +46,9 @@
     font-size:12px; letter-spacing:.14em; color:var(--ink); }
   .folio .mast { font-family:'Noto Serif KR',serif; font-weight:600; }
 
-  /* 사진 위를 가로지르는 두 틈 — 표지 카드의 그 자리, 그 두께 그대로 */
+  /* 사진은 그대로 둔다 — 연결은 색과 도형 마크로 (선은 사진을 방해했다) */
   .opener { position:relative; margin:30px 0 0; }
   .opener img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block; border-radius:16px; }
-  .opener i { position:absolute; left:33%; right:11%; height:9px;
-    background:var(--tint); display:block; }
-  .opener i.a { top:30%; } .opener i.b { top:47%; }
   .opener figcaption { margin-top:13px; font-size:12.5px; letter-spacing:.06em; color:var(--mute); }
 
   .titleblock { margin:44px 0 0; }
@@ -132,7 +129,6 @@
 
   <figure class="opener">
     <img src="assets/discover-01.jpg" alt="잎 사이에 앉아 있던 빛">
-    <i class="a" aria-hidden="true"></i><i class="b" aria-hidden="true"></i>
     <figcaption>의외의 발견 — 잎 사이에 앉아 있던 빛</figcaption>
   </figure>
 
