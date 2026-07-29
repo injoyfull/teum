@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#F5F1EA">
-<meta name="description" content="틈 — 숨과 쉼 사이, 우리에게 주어진 그 틈을 누리는 편지. 2주에 한 번, 하나의 감각과 5분이면 충분한 아주 작은 처방 하나.">
+<meta name="description" content="틈 — 숨과 쉼 사이, 우리에게 주어진 그 틈을 누리는 편지. 2주에 한 번, 감각 하나와 조약돌처럼 작은 해보기 하나.">
 <title>틈 — 숨과 쉼 사이의 편지</title>
 <link rel="canonical" href="https://injoyfull.github.io/teum/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -15,13 +15,13 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:url" content="https://injoyfull.github.io/teum/">
 <meta property="og:title" content="틈 — 숨과 쉼 사이의 편지">
-<meta property="og:description" content="2주에 한 번, 하나의 감각과 5분이면 충분한 아주 작은 처방을 조용히 건넵니다.">
+<meta property="og:description" content="2주에 한 번, 마음에 작은 파동을 일으키는 조약돌 하나를 건넵니다.">
 <meta property="og:image" content="https://injoyfull.github.io/teum/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="틈 — 숨과 쉼 사이의 편지">
-<meta name="twitter:description" content="2주에 한 번, 하나의 감각과 5분이면 충분한 아주 작은 처방을 조용히 건넵니다.">
+<meta name="twitter:description" content="2주에 한 번, 마음에 작은 파동을 일으키는 조약돌 하나를 건넵니다.">
 <meta name="twitter:image" content="https://injoyfull.github.io/teum/assets/og.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;900&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -29,6 +29,7 @@
     --paper:#F5F1EA; --ink:#1A1817; --ink-soft:#3B3733; --mute:#8A847A;
     --line:#A6E22E;                 /* 굵은 한 줄의 색 (네온 그린) */
     --accent:#E85D1C;
+    --logo:#2E6B62;               /* 로고 기본색 — 깊은 물. 틈마다 자기 색을 입는다 */
     --stroke:150;                   /* 라인 두께 */
   }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -88,7 +89,7 @@
   header { padding-top:10vh; }
   /* 로고 — 꽉 찬 덩어리에 새겨진 얇은 틈 (매니페스토: 빈틈없는 세상에서 틈을 편든다) */
   h1.wordmark { line-height:0; }
-  h1.wordmark svg { width:clamp(210px,34vw,336px); height:auto; display:block; color:var(--ink); }
+  h1.wordmark svg { width:clamp(210px,52vw,320px); height:auto; display:block; color:var(--logo); }
   .mast, .tagline, .lede, .form-note { text-shadow:0 0 16px var(--paper), 0 0 10px var(--paper), 0 0 4px var(--paper); }
   .tagline { margin-top:2.2rem; font-weight:600; font-size:clamp(22px,4.6vw,32px); line-height:1.5; word-break:keep-all; }
   .lede { margin-top:1.6rem; max-width:34em; font-weight:300; font-size:16px; line-height:2.05; color:var(--ink-soft); word-break:keep-all; }
@@ -175,10 +176,12 @@
   .reveal.on { opacity:1; transform:none; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
 
-  .season-more { margin-top:1.6rem; font-size:14px; }
-  .season-more a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent);
-                   padding-bottom:2px; display:inline-block; transition:transform .25s ease; }
-  .season-more a:hover { transform:translateX(4px); }
+  .season-item.locked { color:var(--mute); cursor:default; }
+  .season-item.locked:hover { padding-left:0; }
+  .season-item.locked .sn, .season-item.locked .st { opacity:.42; }
+  .season-item.locked .ss::after { content:'  ·  곧'; color:var(--accent); opacity:.85; }
+  .season-more b { color:var(--ink); font-weight:500; }
+  .season-more { margin-top:1.8rem; font-size:13.5px; line-height:1.9; color:var(--mute); word-break:keep-all; }
 
   /* ── 데스크톱 ──────────────────────────────────────────────
      좁은 한 단으로만 두면 넓은 화면에서 양옆이 크게 비어 '모바일 화면'처럼 보인다.
@@ -188,9 +191,12 @@
 
     header { display:grid; grid-template-columns:1fr 1fr; gap:0 72px;
              align-items:start; margin-top:1rem; }
-    h1.wordmark { grid-column:1; grid-row:1; font-size:clamp(200px,17vw,280px); margin-top:-.06em; }
-    .tagline    { grid-column:1; grid-row:2; margin-top:1.2rem; font-size:clamp(28px,2.5vw,36px); }
-    .lede       { grid-column:2; grid-row:1 / span 2; margin-top:5.2rem; max-width:30em; font-size:17px; }
+    h1.wordmark { grid-column:1; grid-row:1; }
+    /* 로고가 단 폭을 채우면 태그라인과 좌우 끝이 정확히 맞는다 */
+    h1.wordmark svg { width:100%; }
+    .tagline    { grid-column:1; grid-row:2; margin-top:2rem; font-size:clamp(26px,2.2vw,33px); }
+    /* 오른쪽 단은 로고 윗선에서 함께 시작한다 (예전엔 97px 아래에서 시작해 어긋나 보였음) */
+    .lede       { grid-column:2; grid-row:1 / span 2; margin-top:0; max-width:30em; font-size:17px; }
     .subscribe  { grid-column:2; grid-row:3; margin-top:2.4rem; }
     .subscribe form, .consent, .consent-detail { max-width:100%; }
 
@@ -200,7 +206,6 @@
 
   @media (min-width:1000px) and (max-width:1200px) {
     header { gap:0 48px; }
-    .lede { margin-top:4rem; }
   }
 </style>
 </head>
@@ -245,7 +250,8 @@
       눈은 하루 종일 뜨고 있었는데, 본 것은 없는 날도요.
       그런 날에도 숨과 쉼 사이에는 틈이 있어요. 아주 작지만, 분명히요.
       <b>틈</b>은 그 틈을 누리시기를 바라며 보내는 편지입니다.
-      2주에 한 번, 감각 하나와 5분이면 되는 아주 작은 것 하나를 담아서요.
+      2주에 한 번, 감각 하나와 조약돌 하나를 담아서요.
+      마음에 퐁, 하고 던져져 작은 파동을 일으키는 — 딱 그만큼의 것들이요.
       잘 지내시는지, 안부를 묻는 마음으로 보냅니다.
     </p>
     <div class="subscribe">
@@ -273,14 +279,15 @@
   </header>
 
   <section class="issue reveal">
-    <p class="overline">이번 편지 — 시각 편</p>
+    <p class="overline">첫 번째 틈 — 시각 편</p>
     <div class="issue-grid">
       <div class="issue-no">01</div>
       <div class="issue-body">
         <h2 class="serif">오늘, 초록을<br>본 적이 있나요?</h2>
         <p class="desc">여름, 초록이 일 년 중 가장 짙어지는 계절.
-           눈이 쉬는 5분에 대한 첫 번째 편지입니다.</p>
-        <a class="read" href="letter-01.html">편지 읽기 →</a>
+           눈이 쉬는 5분에 대한 첫 번째 틈입니다.
+           맛보기로 활짝 열어두었어요.</p>
+        <a class="read" href="letter-01.html">틈 열기 →</a>
       </div>
     </div>
   </section>
@@ -289,17 +296,18 @@
     <p class="overline">시즌 1 — 여름 감각 다이빙</p>
     <a class="season-item" href="letter-01.html">
       <span class="sn">01</span><span class="st">오늘, 초록을 본 적이 있나요?</span><span class="ss">시각</span></a>
-    <a class="season-item" href="letter-02.html">
-      <span class="sn">02</span><span class="st">물에 손을 담가본 게 언제인가요?</span><span class="ss">촉각</span></a>
-    <a class="season-item" href="letter-03.html">
-      <span class="sn">03</span><span class="st">빗소리를 끝까지 들어본 적 있나요?</span><span class="ss">청각</span></a>
-    <a class="season-item" href="letter-04.html">
-      <span class="sn">04</span><span class="st">수박의 첫 입, 기억하세요?</span><span class="ss">미각·후각</span></a>
-    <a class="season-item" href="letter-05.html">
-      <span class="sn">05</span><span class="st">그늘과 볕의 경계를 밟아본 적 있나요?</span><span class="ss">온도</span></a>
-    <a class="season-item" href="letter-06.html">
-      <span class="sn">06</span><span class="st">물 위에 누워본 적 있나요?</span><span class="ss">이름 없는 감각</span></a>
-    <p class="season-more"><a href="archive.html">표지로 모아 보기 →</a></p>
+    <div class="season-item locked">
+      <span class="sn">02</span><span class="st">물에 손을 담가본 게 언제인가요?</span><span class="ss">촉각</span></div>
+    <div class="season-item locked">
+      <span class="sn">03</span><span class="st">빗소리를 끝까지 들어본 적 있나요?</span><span class="ss">청각</span></div>
+    <div class="season-item locked">
+      <span class="sn">04</span><span class="st">수박의 첫 입, 기억하세요?</span><span class="ss">미각·후각</span></div>
+    <div class="season-item locked">
+      <span class="sn">05</span><span class="st">그늘과 볕의 경계를 밟아본 적 있나요?</span><span class="ss">온도</span></div>
+    <div class="season-item locked">
+      <span class="sn">06</span><span class="st">물 위에 누워본 적 있나요?</span><span class="ss">이름 없는 감각</span></div>
+    <p class="season-more">01은 맛보기로 열어두었어요.
+      나머지 다섯 틈은 <b>2주에 하나씩, 메일로만</b> 찾아갑니다.</p>
   </section>
 
   <section class="rhythm">
@@ -309,9 +317,9 @@
         <p>색, 촉감, 소리, 맛, 냄새 — 그리고 그 사이의 이름 없는 감각들.
            한 번에 한 감각만 다룹니다. 계절이 아니라, 오늘 느낄 수 있는 것으로.</p></div></div>
     <div class="rhythm-item reveal"><div class="rhythm-no">02</div>
-      <div><h3 class="serif">5분짜리 처방 하나</h3>
-        <p>거창하면 안 하게 됩니다. 이어폰 없이 10분 걷기, 눈 감고 첫 한 입 먹기 —
-           시시할 만큼 작아서 오늘 바로 해볼 수 있는 것만 담습니다.</p></div></div>
+      <div><h3 class="serif">조약돌 하나</h3>
+        <p>거창하면 안 하게 되잖아요. 눈 감고 첫 한 입, 이어폰 없이 열 걸음 —
+           마음에 퐁 던지면 작은 파동이 남는, 그만큼 작은 것들만 담아요.</p></div></div>
     <div class="rhythm-item reveal"><div class="rhythm-no">03</div>
       <div><h3 class="serif">어느 독자의 감각</h3>
         <p>편지에 답장하면, 당신이 깨어난 순간이 다음 편지에 익명으로 실립니다.

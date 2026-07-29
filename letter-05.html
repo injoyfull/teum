@@ -28,7 +28,7 @@
   :root {
     --paper:#F5F1EA; --ink:#1A1817; --ink-soft:#3B3733; --mute:#8A847A;
     --line:#E8A13C;          /* 이번 호의 색 — 온도 편 · 볕 */
-    --accent:#E85D1C; --stroke:150;
+    --accent:#E85D1C; --tint:#F7EDDC; --logo:#E8A13C; --stroke:150;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--paper); color:var(--ink);
@@ -37,18 +37,30 @@
   .serif { font-family:'Noto Serif KR','Nanum Myeongjo',serif; }
   .page { max-width:720px; margin:0 auto; padding:40px 24px 0; }
 
-  .cover { position:relative; width:100%; aspect-ratio:5/6.2; overflow:hidden; background:var(--paper); }
-  .cover svg { position:absolute; inset:0; width:100%; height:100%; display:block; }
-  .cover .line { fill:none; stroke:var(--line); stroke-width:var(--stroke); stroke-linecap:round; }
-  .cover-top { position:absolute; top:0; left:0; right:0; display:flex; justify-content:space-between;
+  /* ── 매거진 오프너: 폴리오 → 사진 → 제목 ── */
+  .folio { display:flex; justify-content:space-between; align-items:baseline;
+    padding:0 0 13px; border-bottom:1px solid var(--ink);
     font-size:12px; letter-spacing:.14em; color:var(--ink); }
-  .cover-top .mast { font-family:'Noto Serif KR',serif; font-weight:600; }
-  .cover-title { position:absolute; left:0; right:0; bottom:56px;
-    font-family:'Noto Serif KR',serif; font-weight:300;
+  .folio .mast { font-family:'Noto Serif KR',serif; font-weight:600; }
+
+  /* 사진 위를 가로지르는 두 틈 — 표지 카드의 그 자리, 그 두께 그대로 */
+  .opener { position:relative; margin:30px 0 0; }
+  .opener img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block; border-radius:16px; }
+  .opener i { position:absolute; left:33%; right:11%; height:9px;
+    background:var(--tint); display:block; }
+  .opener i.a { top:30%; } .opener i.b { top:47%; }
+  .opener figcaption { margin-top:13px; font-size:12.5px; letter-spacing:.06em; color:var(--mute); }
+
+  .titleblock { margin:44px 0 0; }
+  .titleblock h1 { font-family:'Noto Serif KR',serif; font-weight:300;
     font-size:clamp(34px,8.4vw,62px); line-height:1.24; letter-spacing:-.01em; word-break:keep-all; }
-  .cover-foot { position:absolute; left:0; right:0; bottom:0; display:flex;
-    justify-content:space-between; align-items:flex-end; font-size:12px; color:var(--mute); }
-  .cover-foot .no { font-family:'Noto Serif KR',serif; font-weight:600; font-size:20px; color:var(--ink); }
+  .titleblock .meta { display:flex; justify-content:space-between; align-items:center;
+    margin-top:26px; padding-top:14px; border-top:1px solid #DAD4C7;
+    font-size:12px; color:var(--mute); }
+  .titleblock .meta .right { display:flex; align-items:center; gap:11px; }
+  .titleblock .meta svg { width:21px; height:21px; display:block; }
+  .titleblock .meta .no { font-family:'Noto Serif KR',serif; font-weight:600;
+    font-size:19px; color:var(--ink); }
 
   article { padding:72px 0 0; }
   .kicker { font-size:12px; letter-spacing:.22em; color:var(--mute); margin-bottom:16px; }
@@ -62,9 +74,6 @@
   .rule { width:56px; height:8px; border-radius:4px; background:var(--line); margin:52px 0; }
   .sign { font-size:13px; color:var(--mute); margin-top:6px; }
 
-  .discover { margin:0 0 52px; }
-  .discover img { width:100%; height:auto; display:block; border-radius:4px; }
-  .discover figcaption { margin-top:14px; font-size:12.5px; letter-spacing:.06em; color:var(--mute); }
 
   .rx { margin:52px 0; padding:34px 30px; background:#F9EFDC; border-radius:16px; }
   .rx .tag { font-size:12px; letter-spacing:.2em; color:var(--mute); margin-bottom:10px; }
@@ -97,9 +106,8 @@
      (긴 글은 한 줄이 너무 길면 눈이 다음 줄을 놓쳐 읽기 힘들어진다) */
   @media (min-width:1000px) {
     .page { max-width:1040px; padding:48px 40px 0; }
-    .cover { aspect-ratio:3/2; }
-    .cover-title { font-size:clamp(46px,4.4vw,70px); bottom:64px; }
-    .cover-top, .cover-foot { font-size:13px; }
+    .opener img { aspect-ratio:2/1; }
+    .titleblock h1 { font-size:clamp(46px,4.4vw,70px); }
     article { max-width:720px; margin:0 auto; padding:96px 0 0; }
     p.body { font-size:18px; }
     .lead { font-size:clamp(26px,2.4vw,32px); }
@@ -109,20 +117,27 @@
 <body>
 <div class="page">
 
-  <section class="cover">
-    <svg viewBox="0 0 1000 1240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <path class="line" d="M -180,470 C 180,250 470,250 640,470 C 780,650 950,620 1200,470" />
-    </svg>
-    <div class="cover-top">
-      <span class="mast">틈 <span style="color:var(--mute); font-weight:300;">|</span> 숨과 쉼 사이</span>
-      <span>Vol. 05 · 온도 편</span>
-    </div>
-    <h1 class="cover-title serif">그늘과 볕의 경계를<br>밟아본 적 있나요?</h1>
-    <div class="cover-foot">
+  <div class="folio">
+    <span class="mast">틈 <span style="color:var(--mute); font-weight:300;">|</span> 숨과 쉼 사이</span>
+    <span>Vol. 05 · 온도 편</span>
+  </div>
+
+  <figure class="opener">
+    <img src="assets/discover-05.jpg" alt="그늘과 볕이 만나던 자리">
+    <i class="a" aria-hidden="true"></i><i class="b" aria-hidden="true"></i>
+    <figcaption>의외의 발견 — 그늘과 볕이 만나던 자리</figcaption>
+  </figure>
+
+  <header class="titleblock">
+    <h1 class="serif">그늘과 볕의 경계를<br>밟아본 적 있나요?</h1>
+    <div class="meta">
       <span>시즌 1 · 여름 감각 다이빙 — Summer Sense Diving</span>
-      <span class="no">No.05</span>
+      <span class="right">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M12,46 A19,19 0 0 1 50,46 A19,19 0 0 1 88,46 L88,70 Q88,88 70,88 L30,88 Q12,88 12,70 Z" fill="#E8A13C"/></svg>
+        <span class="no">No.05</span>
+      </span>
     </div>
-  </section>
+  </header>
 
   <article>
     <p class="kicker">시즌 1 여름 감각 다이빙 · 이번 호의 감각 — 온도</p>
@@ -169,13 +184,8 @@
 
     <div class="rule"></div>
 
-    <figure class="discover">
-      <img src="assets/discover-05.jpg" alt="어두운 그늘과 따뜻한 볕이 부드러운 경계로 나뉜 사진">
-      <figcaption>의외의 발견 — 그늘과 볕이 만나던 자리</figcaption>
-    </figure>
-
     <div class="rx">
-      <p class="tag">이번 호의 감각 처방 · 온도</p>
+      <p class="tag">이번 틈의 조약돌 · 온도</p>
       <h4 class="serif">그늘과 볕의 경계를, 천천히 건너봅니다</h4>
       <p>
         오늘 길을 걷다가 그늘의 가장자리를 만나면, 거기서 잠깐 멈춰 보세요.
@@ -197,7 +207,7 @@
 
 
     <div class="join">
-      <p>틈은 2주에 한 번, 하나의 감각과 5분짜리 처방을 조용히 건네는 편지입니다.<br>
+      <p>틈은 2주에 한 번, 감각 하나와 조약돌 하나를 건네는 편지입니다.<br>
          광고 없이, 언제든 떠날 수 있어요.</p>
       <a href="./">틈 구독하기 →</a>
       <span class="join-sep">·</span>

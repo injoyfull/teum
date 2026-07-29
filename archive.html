@@ -88,6 +88,13 @@
                     transition:transform .25s ease; }
   .card:hover .info .go { transform:translateX(4px); }
 
+  .card.locked { cursor:default; }
+  .card.locked .cover { opacity:.5; filter:saturate(.6); }
+  .card.locked:hover .cover { transform:none; box-shadow:none; }
+  .card.locked .info .sense, .card.locked .info .desc { opacity:.6; }
+  .card .info .go.soon { color:var(--mute); }
+  .card.locked:hover .info .go { transform:none; }
+
   /* ── 다음 시즌 ── */
   .next { padding:0 0 12vh; }
   .next .box { border-top:1px solid var(--hair); padding-top:36px;
@@ -122,7 +129,8 @@
   <div class="head">
     <h1 class="serif">지난 틈<span class="dot">.</span></h1>
     <p class="sub">지금까지 여섯 틈을 보냈습니다. 한 틈에 감각 하나씩,
-       5분이면 되는 아주 작은 처방을 담았어요.</p>
+       마음에 퐁 던지는 조약돌 하나씩을 담았어요.<br>
+       <b style="color:var(--ink);font-weight:500">첫 틈만 열어두었고, 나머지는 2주에 하나씩 메일로 찾아갑니다.</b></p>
   </div>
 
   <div class="season-head">
@@ -146,12 +154,12 @@
       <div class="info">
         <div class="sense">시 각</div>
         <p class="desc">하루 종일 무언가를 보고 있었는데, 정작 눈이 쉰 순간은 없었습니다.</p>
-        <span class="go">틈 열기 →</span>
+        <span class="go soon">구독하면 받아볼 수 있어요</span>
       </div>
     </a>
 
     <!-- 02 촉각 · 물: 손끝이 만든 파문 -->
-    <a class="card" href="letter-02.html">
+    <div class="card locked">
       <div class="cover" style="background:#E2EFF6">
         <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <rect x="110" y="90" width="280" height="280" rx="64" fill="#2F9BC4"/>
@@ -164,12 +172,12 @@
       <div class="info">
         <div class="sense">촉 각</div>
         <p class="desc">만진 것은 많았는데, 만졌다는 느낌은 없었습니다.</p>
-        <span class="go">틈 열기 →</span>
+        <span class="go soon">구독하면 받아볼 수 있어요</span>
       </div>
-    </a>
+    </div>
 
     <!-- 03 청각 · 비: 굵기가 다른 빗줄기 -->
-    <a class="card" href="letter-03.html">
+    <div class="card locked">
       <div class="cover" style="background:#E8EAF6">
         <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <rect x="145" y="70" width="210" height="320" rx="105" fill="#4E58B0"/>
@@ -182,12 +190,12 @@
       <div class="info">
         <div class="sense">청 각</div>
         <p class="desc">듣고 있었지만, 듣지는 않았습니다.</p>
-        <span class="go">틈 열기 →</span>
+        <span class="go soon">구독하면 받아볼 수 있어요</span>
       </div>
-    </a>
+    </div>
 
     <!-- 04 미각·후각 · 수박: 씨까지 그대로 -->
-    <a class="card" href="letter-04.html">
+    <div class="card locked">
       <div class="cover" style="background:#FBE9EC">
         <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <path d="M110,320 Q110,370 160,370 L340,370 Q390,370 390,320 L390,230 A140,140 0 0 0 110,230 Z" fill="#E2566A"/>
@@ -200,12 +208,12 @@
       <div class="info">
         <div class="sense">미 각 · 후 각</div>
         <p class="desc">한 통을 다 먹었는데, 맛은 첫 입에만 있었습니다.</p>
-        <span class="go">틈 열기 →</span>
+        <span class="go soon">구독하면 받아볼 수 있어요</span>
       </div>
-    </a>
+    </div>
 
     <!-- 05 온도 · 그늘과 볕: 볕 하나, 그늘 한 자락 -->
-    <a class="card" href="letter-05.html">
+    <div class="card locked">
       <div class="cover" style="background:#F7EDDC">
         <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <path d="M110,230 A70,70 0 0 1 250,230 A70,70 0 0 1 390,230 L390,310 Q390,370 330,370 L170,370 Q110,370 110,310 Z" fill="#E8A13C"/>
@@ -218,12 +226,12 @@
       <div class="info">
         <div class="sense">온 도</div>
         <p class="desc">더위는 잘 피하고 있었는데, 여름은 느끼지 못하고 있었습니다.</p>
-        <span class="go">틈 열기 →</span>
+        <span class="go soon">구독하면 받아볼 수 있어요</span>
       </div>
-    </a>
+    </div>
 
     <!-- 06 이름 없는 감각 · 부력: 물 위에 뜬 동그라미 -->
-    <a class="card" href="letter-06.html">
+    <div class="card locked">
       <div class="cover" style="background:#E1F0EC">
         <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <rect x="100" y="125" width="300" height="205" rx="102" fill="#3AA394"/>
@@ -236,9 +244,9 @@
       <div class="info">
         <div class="sense">이 름 없 는 감 각</div>
         <p class="desc">힘을 빼면 가라앉을 줄 알았는데, 힘을 빼야 뜨더라고요.</p>
-        <span class="go">틈 열기 →</span>
+        <span class="go soon">구독하면 받아볼 수 있어요</span>
       </div>
-    </a>
+    </div>
 
   </div>
 
