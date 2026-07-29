@@ -121,16 +121,23 @@
 
   /* 영문판 — word-break:keep-all 은 한국어 전용이라 해제한다 */
   .lead, p.body, h3.sub, .rx p, .rx h4, .invite, .closing p, .join p, .cover-title, h1 { word-break:normal; }
-  .folio .lang { color:var(--accent); text-decoration:none;
-                 border-bottom:1px solid var(--accent); padding-bottom:1px; }
+
+  /* 언어 전환 — 알약 버튼 두 칸. 현재 언어가 채워져 있다 */
+  .langsw { display:inline-flex; align-items:center; border:1px solid var(--ink);
+            border-radius:999px; overflow:hidden; margin-left:14px;
+            font-size:10px; letter-spacing:.1em; line-height:1; vertical-align:middle; }
+  .langsw a, .langsw span { padding:5px 9px 6px; text-decoration:none; transition:background .2s ease; }
+  .langsw .on { background:var(--ink); color:var(--paper); font-weight:500; }
+  .langsw a { color:var(--ink); }
+  .langsw a:hover { background:rgba(26,24,23,.08); }
 </style>
 </head>
 <body>
 <div class="page">
 
   <div class="folio">
-    <span class="mast">Teum <span style="color:var(--mute); font-weight:300;">|</span> between breath and rest</span>
-    <span>Vol. 01 · Sight &nbsp;<a class="lang" href="../letter-01.html">한국어</a></span>
+    <span class="mast">TEUM <span style="color:var(--mute); font-weight:300;">|</span> between Breath and Rest</span>
+    <span>Vol. 01 · Sight <span class="langsw"><a href="../letter-01.html">KO</a><span class="on">EN</span></span></span>
   </div>
 
   <figure class="opener">

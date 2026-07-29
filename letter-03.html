@@ -111,6 +111,15 @@
     p.body { font-size:18px; }
     .lead { font-size:clamp(26px,2.4vw,32px); }
   }
+
+  /* 언어 전환 — 알약 버튼 두 칸. 현재 언어가 채워져 있다 */
+  .langsw { display:inline-flex; align-items:center; border:1px solid var(--ink);
+            border-radius:999px; overflow:hidden; margin-left:14px;
+            font-size:10px; letter-spacing:.1em; line-height:1; vertical-align:middle; }
+  .langsw a, .langsw span { padding:5px 9px 6px; text-decoration:none; transition:background .2s ease; }
+  .langsw .on { background:var(--ink); color:var(--paper); font-weight:500; }
+  .langsw a { color:var(--ink); }
+  .langsw a:hover { background:rgba(26,24,23,.08); }
 </style>
 </head>
 <body>
@@ -118,7 +127,7 @@
 
   <div class="folio">
     <span class="mast">틈 <span style="color:var(--mute); font-weight:300;">|</span> 숨과 쉼 사이</span>
-    <span>Vol. 03 · 청각 편</span>
+    <span>Vol. 03 · 청각 편 <span class="langsw"><span class="on">KO</span><a href="en/letter-03.html">EN</a></span></span>
   </div>
 
   <figure class="opener">

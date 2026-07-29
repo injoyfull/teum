@@ -86,8 +86,6 @@
   }
   .mast .brand { font-family:'Noto Serif KR',serif; font-weight:600; font-size:13px; }
   .mast .brand span { color:var(--mute); font-weight:300; margin:0 6px; }
-  .mast .lang { color:var(--accent); text-decoration:none;
-                border-bottom:1px solid var(--accent); padding-bottom:1px; letter-spacing:.08em; }
   /* 영문판: word-break:keep-all 은 한국어 전용 규칙이므로 해제한다 */
   .tagline, .lede, .issue-body h2, .issue-body .desc, .rhythm-item h3, .rhythm-item p,
   .closing p, .season-item .st, .season-more { word-break:normal; }
@@ -214,6 +212,15 @@
   @media (min-width:1000px) and (max-width:1200px) {
     header { gap:0 48px; }
   }
+
+  /* 언어 전환 — 알약 버튼 두 칸. 현재 언어가 채워져 있다 */
+  .langsw { display:inline-flex; align-items:center; border:1px solid var(--ink);
+            border-radius:999px; overflow:hidden; margin-left:14px;
+            font-size:10px; letter-spacing:.1em; line-height:1; vertical-align:middle; }
+  .langsw a, .langsw span { padding:5px 9px 6px; text-decoration:none; transition:background .2s ease; }
+  .langsw .on { background:var(--ink); color:var(--paper); font-weight:500; }
+  .langsw a { color:var(--ink); }
+  .langsw a:hover { background:rgba(26,24,23,.08); }
 </style>
 </head>
 <body>
@@ -236,8 +243,8 @@
 <div class="wrap">
 
   <div class="mast">
-    <span class="brand">Teum<span>|</span>between breath and rest</span>
-    <span>Season 1 · Summer Sense Diving &nbsp;<a class="lang" href="../">한국어</a></span>
+    <span class="brand">TEUM<span>|</span>between Breath and Rest</span>
+    <span>Season 1 · Summer Sense Diving <span class="langsw"><a href="../">KO</a><span class="on">EN</span></span></span>
   </div>
 
   <header>

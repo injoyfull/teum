@@ -85,8 +85,6 @@
   }
   .mast .brand { font-family:'Noto Serif KR',serif; font-weight:600; font-size:13px; }
   .mast .brand span { color:var(--mute); font-weight:300; margin:0 6px; }
-  .mast .lang { color:var(--accent); text-decoration:none;
-                border-bottom:1px solid var(--accent); padding-bottom:1px; letter-spacing:.08em; }
 
   header { padding-top:10vh; }
   /* 로고 — 꽉 찬 덩어리에 새겨진 얇은 틈 (매니페스토: 빈틈없는 세상에서 틈을 편든다) */
@@ -209,6 +207,15 @@
   @media (min-width:1000px) and (max-width:1200px) {
     header { gap:0 48px; }
   }
+
+  /* 언어 전환 — 알약 버튼 두 칸. 현재 언어가 채워져 있다 */
+  .langsw { display:inline-flex; align-items:center; border:1px solid var(--ink);
+            border-radius:999px; overflow:hidden; margin-left:14px;
+            font-size:10px; letter-spacing:.1em; line-height:1; vertical-align:middle; }
+  .langsw a, .langsw span { padding:5px 9px 6px; text-decoration:none; transition:background .2s ease; }
+  .langsw .on { background:var(--ink); color:var(--paper); font-weight:500; }
+  .langsw a { color:var(--ink); }
+  .langsw a:hover { background:rgba(26,24,23,.08); }
 </style>
 </head>
 <body>
@@ -232,7 +239,7 @@
 
   <div class="mast">
     <span class="brand">틈<span>|</span>숨과 쉼 사이</span>
-    <span>시즌 1 · 여름 감각 다이빙 &nbsp;<a class="lang" href="en/">EN</a></span>
+    <span>시즌 1 · 여름 감각 다이빙 <span class="langsw"><span class="on">KO</span><a href="en/">EN</a></span></span>
   </div>
 
   <header>
