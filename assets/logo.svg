@@ -1,15 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 100" width="96" height="100" role="img" aria-label="틈">
-  <!-- 틈 로고 — ㅌ.
-       왼쪽 기둥 하나에 가로 획 셋. 획과 획 사이에 남는 두 자리가 곧 '틈'.
-       그 틈으로 빛이 들어온다는 뜻에서, 틈 안에만 주황 한 줄을 둔다. -->
-  <g fill="#1A1817">
-    <rect x="8" y="10" width="22" height="80" rx="7"/>
-    <rect x="8" y="10" width="80" height="20.5" rx="10.25"/>
-    <rect x="8" y="39.75" width="80" height="20.5" rx="10.25"/>
-    <rect x="8" y="69.5" width="80" height="20.5" rx="10.25"/>
-  </g>
-  <g fill="#E85D1C">
-    <rect x="30" y="33.6" width="58" height="3" rx="1.5"/>
-    <rect x="30" y="63.4" width="58" height="3" rx="1.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 300" width="540" height="300" role="img" aria-label="틈">
+  <!-- 틈 로고 — 꽉 찬 덩어리에 새겨진 얇은 틈.
+       "빈틈없이 사는 것이 미덕인 세상에서, 우리는 틈을 편듭니다."
+       틈이 귀한 것은 드물기 때문이므로, 틈은 획보다 훨씬 가늘게 유지한다. -->
+  <rect width="540" height="300" fill="#1A1817"/>
+  <g fill="#F5F1EA">
+    <rect x="268" y="58"  width="8"   height="102"/>
+    <rect x="268" y="152" width="272" height="8"/>
+    <rect x="264" y="225" width="276" height="8"/>
   </g>
 </svg>

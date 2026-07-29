@@ -1,16 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <!-- 틈 파비콘 — ㅌ. 획 사이 두 틈, 그 안에 주황 한 줄. -->
+  <!-- 파비콘 — 작은 자리 전용. 틈을 원본보다 굵게 잡아야 사라지지 않는다. -->
   <rect width="100" height="100" rx="22" fill="#F5F1EA"/>
-  <g transform="translate(11.6,10) scale(0.8)">
-    <g fill="#1A1817">
-      <rect x="8" y="10" width="22" height="80" rx="7"/>
-      <rect x="8" y="10" width="80" height="20.5" rx="10.25"/>
-      <rect x="8" y="39.75" width="80" height="20.5" rx="10.25"/>
-      <rect x="8" y="69.5" width="80" height="20.5" rx="10.25"/>
-    </g>
-    <g fill="#E85D1C">
-      <rect x="30" y="33.6" width="58" height="3" rx="1.5"/>
-      <rect x="30" y="63.4" width="58" height="3" rx="1.5"/>
-    </g>
+  <rect x="14" y="28" width="72" height="44" fill="#1A1817"/>
+  <g fill="#F5F1EA">
+    <rect x="50" y="34" width="5"  height="18"/>
+    <rect x="50" y="47" width="36" height="5"/>
+    <rect x="47" y="59" width="39" height="5"/>
   </g>
 </svg>
