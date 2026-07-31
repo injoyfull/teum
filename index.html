@@ -87,9 +87,10 @@
   .mast .brand span { color:var(--mute); font-weight:300; margin:0 6px; }
 
   header { padding-top:10vh; }
-  /* 로고 — 꽉 찬 덩어리에 새겨진 얇은 틈 (매니페스토: 빈틈없는 세상에서 틈을 편든다) */
-  h1.wordmark { line-height:0; }
-  h1.wordmark svg { width:clamp(210px,52vw,320px); height:auto; display:block; color:var(--logo); }
+  /* 제호 — 글자로 둔다. 로고 마크는 파비콘·프로필·공유 카드에만 쓴다 */
+  h1.wordmark { font-weight:300; font-size:clamp(110px,26vw,200px); line-height:.95; letter-spacing:.01em; }
+  /* 점의 아래끝을 '틈'의 아래끝에 맞춘다 (Noto Serif KR 기준 .0815em 차이) */
+  h1 .dot { color:var(--logo); display:inline-block; transform:translateY(.0815em); }
   .mast, .tagline, .lede, .form-note { text-shadow:0 0 16px var(--paper), 0 0 10px var(--paper), 0 0 4px var(--paper); }
   .tagline { margin-top:2.2rem; font-weight:600; font-size:clamp(22px,4.6vw,32px); line-height:1.5; word-break:keep-all; }
   .lede { margin-top:1.6rem; max-width:34em; font-weight:300; font-size:16px; line-height:2.05; color:var(--ink-soft); word-break:keep-all; }
@@ -192,8 +193,6 @@
     header { display:grid; grid-template-columns:1fr 1fr; gap:0 72px;
              align-items:start; margin-top:1rem; }
     h1.wordmark { grid-column:1; grid-row:1; }
-    /* 로고가 단 폭을 채우면 태그라인과 좌우 끝이 정확히 맞는다 */
-    h1.wordmark svg { width:100%; }
     .tagline    { grid-column:1; grid-row:2; margin-top:2rem; font-size:clamp(26px,2.2vw,33px); }
     /* 오른쪽 단은 로고 윗선에서 함께 시작한다 (예전엔 97px 아래에서 시작해 어긋나 보였음) */
     .lede       { grid-column:2; grid-row:1 / span 2; margin-top:0; max-width:30em; font-size:17px; }
@@ -243,16 +242,7 @@
   </div>
 
   <header>
-    <h1 class="wordmark" aria-label="틈">
-      <svg viewBox="0 0 540 300" aria-hidden="true">
-        <rect width="540" height="300" fill="currentColor"/>
-        <g fill="var(--paper)">
-          <rect x="268" y="58"  width="8"   height="102"/>
-          <rect x="268" y="152" width="272" height="8"/>
-          <rect x="264" y="225" width="276" height="8"/>
-        </g>
-      </svg>
-    </h1>
+    <h1 class="wordmark serif">틈<span class="dot">.</span></h1>
     <p class="tagline serif">들이쉬고 내쉬는 사이,<br>잠깐 틈이 느껴지시나요?</p>
     <p class="lede">
       커피를 다 마시고도 무슨 맛이었는지 기억나지 않는 날이 있지요.
