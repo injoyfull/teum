@@ -38,7 +38,7 @@
   .page { max-width:720px; margin:0 auto; padding:40px 24px 0; }
 
   /* ── 매거진 오프너: 폴리오 → 사진 → 제목 ── */
-  .folio { display:flex; justify-content:space-between; align-items:baseline;
+  .folio { display:flex; justify-content:space-between; align-items:center;
     padding:0 0 13px; border-bottom:1px solid var(--ink);
     font-size:12px; letter-spacing:.14em; color:var(--ink); }
   .folio .mast { font-family:'Noto Serif KR',serif; font-weight:600; }
@@ -116,12 +116,19 @@
 
   /* 언어 전환 — 알약 버튼 두 칸. 현재 언어가 채워져 있다 */
   .langsw { display:inline-flex; align-items:center; border:1px solid var(--ink);
-            border-radius:999px; overflow:hidden; margin-left:14px;
-            font-size:10px; letter-spacing:.1em; line-height:1; vertical-align:middle; }
-  .langsw a, .langsw span { padding:5px 9px 6px; text-decoration:none; transition:background .2s ease; }
+            border-radius:999px; overflow:hidden; margin-left:10px;
+            font-size:9px; letter-spacing:.1em; line-height:1; vertical-align:middle; }
+  .langsw a, .langsw span { padding:4px 7px 5px; text-decoration:none; transition:background .2s ease; }
   .langsw .on { background:var(--ink); color:var(--paper); font-weight:500; }
   .langsw a { color:var(--ink); }
   .langsw a:hover { background:rgba(26,24,23,.08); }
+  /* 모바일 폴리오 — 한 줄 유지. 감각 라벨은 본문 키커·메타에 이미 있다 */
+  .folio .mast, .folio > span:last-child { white-space:nowrap; }
+  .folio > span:last-child { display:inline-flex; align-items:center; }
+  @media (max-width:640px) {
+    .folio { letter-spacing:.08em; }
+    .fdetail, .meta-en { display:none; }
+  }
 </style>
 </head>
 <body>
@@ -129,7 +136,7 @@
 
   <div class="folio">
     <span class="mast">틈 <span style="color:var(--mute); font-weight:300;">|</span> 숨과 쉼 사이</span>
-    <span>Vol. 06 · 이름 없는 감각 편 <span class="langsw"><span class="on">KO</span><a href="en/letter-06.html">EN</a></span></span>
+    <span>Vol. 06<span class="fdetail"> · 이름 없는 감각 편</span> <span class="langsw"><span class="on">KO</span><a href="en/letter-06.html">EN</a></span></span>
   </div>
 
   <figure class="opener">
@@ -140,7 +147,7 @@
   <header class="titleblock">
     <h1 class="serif">물 위에<br>누워본 적 있나요?</h1>
     <div class="meta">
-      <span>시즌 1 · 여름 감각 다이빙 — Summer Sense Diving</span>
+      <span>시즌 1 · 여름 감각 다이빙<span class="meta-en"> — Summer Sense Diving</span></span>
       <span class="right">
         <svg viewBox="0 0 100 100" aria-hidden="true"><rect x="6" y="30" width="88" height="40" rx="20" fill="#3AA394"/></svg>
         <span class="no">No.06</span>
