@@ -59,7 +59,9 @@
   /* ── 시즌 헤더 ── */
   .season-head { display:flex; justify-content:space-between; align-items:baseline;
                  padding-bottom:16px; border-bottom:2px solid var(--ink); margin-bottom:52px; }
-  .season-head h2 { font-family:'Noto Serif KR',serif; font-weight:600; font-size:19px; }
+  .season-head h2 { font-family:'Noto Serif KR',serif; font-weight:600; font-size:19px;
+                     display:flex; align-items:center; gap:10px; }
+  .season-head .hmark svg { width:24px; height:30px; display:block; }
   .season-head .meta { font-size:11px; letter-spacing:.22em; color:var(--mute); }
 
   /* ── 표지 격자: 틈마다 자기 감각으로 논다 ── */
@@ -135,7 +137,7 @@
   </div>
 
   <div class="season-head">
-    <h2 class="serif">시즌 1 — 여름 감각 다이빙</h2>
+    <h2 class="serif"><span class="hmark"><svg viewBox="587.95 116.07 196.08 247.75" aria-hidden="true"><path fill="#3E9C83" d="M648.17,116.07c-42.02,0-60.22,7.6-60.22,25.14v222.75h196.08V116.07h-135.86ZM695.12,194.81c4.67,0,8.45,3.62,8.45,8.09s-3.79,8.09-8.45,8.09-8.45-3.62-8.45-8.09,3.79-8.09,8.45-8.09ZM723.9,250.51c-19.66-1.82-42.61-6.91-60.39-16.48l5.89-9.37c17.56,8.56,37.85,14.4,57.51,16.22l-3.01,9.64ZM723.26,212.95c-4.67,0-8.45-3.62-8.45-8.09s3.79-8.09,8.45-8.09,8.45,3.62,8.45,8.09-3.79,8.09-8.45,8.09Z"/></svg></span>시즌 1 — 여름 감각 다이빙</h2>
     <span class="meta">여섯 틈 · 2026</span>
   </div>
 
