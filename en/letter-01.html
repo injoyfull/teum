@@ -63,34 +63,47 @@
   .titleblock .meta .no { font-family:'Noto Serif KR',serif; font-weight:600;
     font-size:19px; color:var(--ink); }
 
-  /* ── 본문 ── */
+  /* ── 본문 타이포 ─────────────────────────────────────
+     규칙 하나: 명조 = 말하는 것, 고딕 = 가리키는 것.
+     본문·리드·맺음은 명조로 두어 손편지의 온기를 지키고,
+     구조를 알리는 것(키커·소제목·조약돌 제목)만 고딕으로 세운다.
+     조약돌 본문까지 명조로 통일해 편지가 한 흐름으로 읽히게 했다. */
   article { padding:72px 0 0; }
-  .kicker { font-size:12px; letter-spacing:.22em; color:var(--mute); margin-bottom:16px; }
+
+  /* 가리키는 것 — 고딕 */
+  .kicker { font-size:11px; font-weight:500; letter-spacing:.24em;
+    color:var(--ink); margin-bottom:15px; }
+  h3.sub { font-family:'Noto Sans KR',sans-serif; font-weight:700; font-size:17px;
+    letter-spacing:0; color:var(--ink); margin:52px 0 20px; }
+
+  /* 말하는 것 — 명조 */
   .lead {
     font-family:'Noto Serif KR',serif; font-weight:600;
     font-size:clamp(23px,4.8vw,30px); line-height:1.55; word-break:keep-all; margin-bottom:38px;
   }
   p.body {
-    font-family:'Noto Serif KR',serif; font-weight:300; font-size:17px; line-height:2.15;
+    font-family:'Noto Serif KR',serif; font-weight:300; font-size:17.5px; line-height:2.2;
     color:var(--ink-soft); word-break:keep-all; margin:0 0 28px;
   }
   p.body b { font-weight:600; color:var(--ink); }
-  h3.sub {
-    font-family:'Noto Serif KR',serif; font-weight:600; font-size:21px;
-    margin:44px 0 18px; word-break:keep-all;
-  }
-  .sign { font-size:13px; color:var(--mute); margin-top:6px; }
+  .sign { font-size:12.5px; color:var(--mute); margin-top:10px; letter-spacing:.02em; }
 
-
+  /* ── 이번 틈의 조약돌 ──
+     제목만 고딕으로 세우고 본문은 명조. 편지에서 떨어져 나가지 않는다 */
   .rx { margin:52px 0; padding:34px 30px; background:#EFF3E6; border-radius:16px; }
-  .rx .tag { font-size:12px; letter-spacing:.2em; color:var(--mute); margin-bottom:10px; }
-  .rx h4 { font-family:'Noto Serif KR',serif; font-weight:600; font-size:22px; margin-bottom:14px; word-break:keep-all; }
-  .rx p { font-size:15px; line-height:2; color:var(--ink-soft); word-break:keep-all; }
-  .rx p b { color:var(--ink); font-weight:500; }
+  .rx .tag { font-size:11px; font-weight:500; letter-spacing:.24em;
+    color:var(--ink); margin-bottom:11px; }
+  .rx h4 { font-family:'Noto Sans KR',sans-serif; font-weight:700; font-size:19px;
+    letter-spacing:0; margin-bottom:13px; }
+  .rx p { font-family:'Noto Serif KR',serif; font-weight:300; font-size:16px;
+    line-height:2.05; color:var(--ink-soft); word-break:keep-all; }
+  .rx p b { color:var(--ink); font-weight:600; }
 
-  .invite { margin:44px 0; padding:26px 0; border-top:1px solid #DAD4C7; border-bottom:1px solid #DAD4C7;
-            font-size:15px; line-height:1.95; color:var(--ink-soft); word-break:keep-all; }
-  .invite b { color:var(--ink); font-weight:500; }
+  /* 초대 — 아래 선만 남긴다. 조약돌 색면이 이미 위를 끊어준다 */
+  .invite { margin:44px 0; padding:0 0 26px; border-bottom:1px solid #DAD4C7;
+            font-family:'Noto Serif KR',serif; font-weight:300;
+            font-size:16px; line-height:2.05; color:var(--ink-soft); word-break:keep-all; }
+  .invite b { color:var(--ink); font-weight:600; }
 
   .closing { margin:64px 0 0; }
   .closing p { font-family:'Noto Serif KR',serif; font-weight:600; font-size:clamp(22px,5vw,28px); line-height:1.6; word-break:keep-all; }
