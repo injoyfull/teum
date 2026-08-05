@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>틈 — 타이포그래피 세 가지 버전</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --paper:#F5F1EA; --ink:#1A1817; --ink-soft:#3B3733; --mute:#8A847A;
+          --line:#A6E22E; --accent:#E85D1C; --tint:#EDF6DC; --hair:#DAD4C7; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#E9E4DA; font-family:'Noto Sans KR',sans-serif; padding:34px 20px 90px; }
+  .lab { max-width:760px; margin:0 auto 14px; display:flex; align-items:baseline; gap:14px;
+         padding-top:38px; }
+  .lab b { font-family:'Noto Serif KR',serif; font-size:19px; font-weight:600; color:var(--ink); }
+  .lab span { font-size:12.5px; color:#6E675E; line-height:1.7; }
+  .sheet { max-width:760px; margin:0 auto; background:var(--paper); padding:54px 52px 46px;
+           border-radius:14px; box-shadow:0 2px 20px rgba(26,24,23,.07); }
+  .intro { max-width:760px; margin:0 auto 8px; font-size:13px; line-height:1.9; color:#4A443C; }
+  .intro b { color:var(--ink); }
+  @media (max-width:640px) { .sheet { padding:34px 26px 30px; } body { padding:24px 14px 60px; } }
+
+  /* ── 공통 뼈대 ── */
+  .sheet .sub { word-break:keep-all; }
+  .sheet p.body { word-break:keep-all; margin:0 0 26px; }
+  .sheet .sign { margin-top:4px; }
+  .sheet .rx { border-radius:14px; }
+  .sheet .rx .tag { margin-bottom:11px; }
+  .sheet .rx h4 { word-break:keep-all; margin-bottom:13px; }
+  .sheet .rx p { word-break:keep-all; }
+  .sheet .invite { word-break:keep-all; }
+  .sheet .kicker { margin-bottom:15px; }
+
+  /* ═══ A안 — 에디토리얼 ═══════════════════════════
+     원칙 하나: 명조는 '목소리', 고딕은 '표시'.
+     읽는 것은 전부 명조로 통일하고, 라벨·번호만 고딕. */
+  .A .kicker { font-family:'Noto Sans KR',sans-serif; font-size:11.5px; font-weight:400;
+               letter-spacing:.2em; color:var(--mute); }
+  .A .sub { font-family:'Noto Serif KR',serif; font-weight:600; font-size:21px;
+            margin:0 0 18px; }
+  .A p.body { font-family:'Noto Serif KR',serif; font-weight:300; font-size:17px;
+              line-height:2.15; color:var(--ink-soft); }
+  .A p.body b { font-weight:600; color:var(--ink); }
+  .A .sign { font-family:'Noto Sans KR',sans-serif; font-size:12.5px; color:var(--mute);
+             letter-spacing:.02em; }
+  .A .rx { background:var(--tint); padding:34px 30px; margin:46px 0; }
+  .A .rx .tag { font-family:'Noto Sans KR',sans-serif; font-size:11px; font-weight:400;
+                letter-spacing:.2em; color:var(--mute); }
+  .A .rx h4 { font-family:'Noto Serif KR',serif; font-weight:600; font-size:22px; }
+  .A .rx p { font-family:'Noto Serif KR',serif; font-weight:300; font-size:16px;
+             line-height:2.05; color:var(--ink-soft); }
+  .A .rx p b { font-weight:600; color:var(--ink); }
+  .A .invite { font-family:'Noto Serif KR',serif; font-weight:300; font-size:16px;
+               line-height:2.05; color:var(--ink-soft);
+               border-top:1px solid var(--hair); padding-top:26px; margin-top:44px; }
+  .A .invite b { font-weight:600; color:var(--ink); }
+
+  /* ═══ B안 — 대비형 ═══════════════════════════════
+     소제목만 고딕으로 끊어 준다. 명조 흐름 속에서
+     고딕 한 줄이 표지판처럼 서서 단락이 또렷해진다. */
+  .B .kicker { font-family:'Noto Sans KR',sans-serif; font-size:11px; font-weight:500;
+               letter-spacing:.24em; color:var(--ink); }
+  .B .sub { font-family:'Noto Sans KR',sans-serif; font-weight:700; font-size:17px;
+            letter-spacing:-.01em; margin:0 0 20px; color:var(--ink); }
+  .B p.body { font-family:'Noto Serif KR',serif; font-weight:300; font-size:17.5px;
+              line-height:2.2; color:var(--ink-soft); }
+  .B p.body b { font-weight:600; color:var(--ink); }
+  .B .sign { font-family:'Noto Sans KR',sans-serif; font-size:12.5px; color:var(--mute); }
+  .B .rx { background:var(--tint); padding:34px 30px; margin:46px 0; }
+  .B .rx .tag { font-family:'Noto Sans KR',sans-serif; font-size:11px; font-weight:500;
+                letter-spacing:.24em; color:var(--ink); }
+  .B .rx h4 { font-family:'Noto Sans KR',sans-serif; font-weight:700; font-size:19px;
+              letter-spacing:-.01em; }
+  .B .rx p { font-family:'Noto Serif KR',serif; font-weight:300; font-size:16px;
+             line-height:2.05; color:var(--ink-soft); }
+  .B .rx p b { font-weight:600; color:var(--ink); }
+  .B .invite { font-family:'Noto Serif KR',serif; font-weight:300; font-size:16px;
+               line-height:2.05; color:var(--ink-soft);
+               border-top:1px solid var(--hair); padding-top:26px; margin-top:44px; }
+  .B .invite b { font-weight:600; color:var(--ink); }
+
+  /* ═══ C안 — 미니멀 ═══════════════════════════════
+     명조는 큰 제목과 조약돌 한 문장에만 남기고
+     나머지는 얇은 고딕. 가장 현대적이고 가벼운 인상. */
+  .C .kicker { font-family:'Noto Sans KR',sans-serif; font-size:11px; font-weight:400;
+               letter-spacing:.26em; color:var(--mute); }
+  .C .sub { font-family:'Noto Sans KR',sans-serif; font-weight:500; font-size:16px;
+            letter-spacing:.01em; margin:0 0 20px; color:var(--ink); }
+  .C p.body { font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:16px;
+              line-height:2.25; color:var(--ink-soft); letter-spacing:-.003em; }
+  .C p.body b { font-weight:500; color:var(--ink); }
+  .C .sign { font-family:'Noto Sans KR',sans-serif; font-size:12.5px; color:var(--mute); }
+  .C .rx { background:transparent; border-top:2px solid var(--ink);
+           border-bottom:1px solid var(--hair); border-radius:0;
+           padding:26px 0 30px; margin:48px 0; }
+  .C .rx .tag { font-family:'Noto Sans KR',sans-serif; font-size:10.5px; font-weight:400;
+                letter-spacing:.26em; color:var(--mute); }
+  .C .rx h4 { font-family:'Noto Serif KR',serif; font-weight:300; font-size:27px;
+              line-height:1.45; letter-spacing:-.01em; }
+  .C .rx p { font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:15px;
+             line-height:2.1; color:var(--ink-soft); }
+  .C .rx p b { font-weight:500; color:var(--ink); }
+  .C .invite { font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:14.5px;
+               line-height:2.1; color:var(--ink-soft); margin-top:40px; }
+  .C .invite b { font-weight:500; color:var(--ink); }
+</style>
+</head>
+<body>
+
+<p class="intro">같은 글, 세 가지 배열. <b>초록 막대는 세 안 모두에서 뺐어요.</b>
+   글이 끊기는 자리는 선이 아니라 여백이 맡습니다.</p>
+
+<!-- ══════════ A ══════════ -->
+<div class="lab">
+  <b>A안 — 에디토리얼</b>
+  <span>명조는 목소리, 고딕은 표시. 읽는 것은 전부 명조로 통일.</span>
+</div>
+<div class="sheet A">
+  <p class="kicker">시즌 1 여름 감각 다이빙 · 이번 호의 감각 — 시각</p>
+  <h3 class="sub">멀리 가지 않아도 됩니다</h3>
+  <p class="body">회복하려고 멀리 떠나곤 하지요. 저도 그래 봤고요. 그런데 돌아와 보면 알아요.
+     회복은 대단한 결심 끝에 오는 게 아니라, 일상의 틈으로 조용히 스며드는 거더라고요.</p>
+  <p class="body">바쁘다는 이유로 지나쳤던 것들은, 사라진 게 아니라 그 자리에 그대로 있어요.
+     회사 앞 화단. 하천을 따라 심긴 나무들. 창밖 이웃집 화분 하나.
+     <b>지금이, 물어보기 제일 좋은 때지요.</b></p>
+  <p class="sign">— 올리한나 드림</p>
+  <div class="rx">
+    <p class="tag">이번 틈의 조약돌 · 시각</p>
+    <h4>오늘, 5분만 초록에 눈을 둡니다</h4>
+    <p>오늘 어디서든 초록 하나를 정해, 딱 5분만 눈을 두세요. 사진은 찍지 마시고요.
+       기록도 남기지 마세요. <b>그냥 보는 것. 오늘은 그게 다예요.</b></p>
+  </div>
+  <p class="invite">5분 동안은, 그냥 보기만 하세요. 다 보고 난 뒤에 문득 말하고 싶어지면,
+     그때 이 편지에 <b>답장</b>해 주세요.</p>
+</div>
+
+<!-- ══════════ B ══════════ -->
+<div class="lab">
+  <b>B안 — 대비형</b>
+  <span>소제목과 조약돌 제목만 고딕. 명조 흐름 속에 표지판이 선다.</span>
+</div>
+<div class="sheet B">
+  <p class="kicker">시즌 1 여름 감각 다이빙 · 이번 호의 감각 — 시각</p>
+  <h3 class="sub">멀리 가지 않아도 됩니다</h3>
+  <p class="body">회복하려고 멀리 떠나곤 하지요. 저도 그래 봤고요. 그런데 돌아와 보면 알아요.
+     회복은 대단한 결심 끝에 오는 게 아니라, 일상의 틈으로 조용히 스며드는 거더라고요.</p>
+  <p class="body">바쁘다는 이유로 지나쳤던 것들은, 사라진 게 아니라 그 자리에 그대로 있어요.
+     회사 앞 화단. 하천을 따라 심긴 나무들. 창밖 이웃집 화분 하나.
+     <b>지금이, 물어보기 제일 좋은 때지요.</b></p>
+  <p class="sign">— 올리한나 드림</p>
+  <div class="rx">
+    <p class="tag">이번 틈의 조약돌 · 시각</p>
+    <h4>오늘, 5분만 초록에 눈을 둡니다</h4>
+    <p>오늘 어디서든 초록 하나를 정해, 딱 5분만 눈을 두세요. 사진은 찍지 마시고요.
+       기록도 남기지 마세요. <b>그냥 보는 것. 오늘은 그게 다예요.</b></p>
+  </div>
+  <p class="invite">5분 동안은, 그냥 보기만 하세요. 다 보고 난 뒤에 문득 말하고 싶어지면,
+     그때 이 편지에 <b>답장</b>해 주세요.</p>
+</div>
+
+<!-- ══════════ C ══════════ -->
+<div class="lab">
+  <b>C안 — 미니멀</b>
+  <span>본문은 얇은 고딕. 명조는 조약돌 한 문장에만 크게 남긴다.</span>
+</div>
+<div class="sheet C">
+  <p class="kicker">시즌 1 여름 감각 다이빙 · 이번 호의 감각 — 시각</p>
+  <h3 class="sub">멀리 가지 않아도 됩니다</h3>
+  <p class="body">회복하려고 멀리 떠나곤 하지요. 저도 그래 봤고요. 그런데 돌아와 보면 알아요.
+     회복은 대단한 결심 끝에 오는 게 아니라, 일상의 틈으로 조용히 스며드는 거더라고요.</p>
+  <p class="body">바쁘다는 이유로 지나쳤던 것들은, 사라진 게 아니라 그 자리에 그대로 있어요.
+     회사 앞 화단. 하천을 따라 심긴 나무들. 창밖 이웃집 화분 하나.
+     <b>지금이, 물어보기 제일 좋은 때지요.</b></p>
+  <p class="sign">— 올리한나 드림</p>
+  <div class="rx">
+    <p class="tag">이번 틈의 조약돌 · 시각</p>
+    <h4>오늘, 5분만<br>초록에 눈을 둡니다</h4>
+    <p>오늘 어디서든 초록 하나를 정해, 딱 5분만 눈을 두세요. 사진은 찍지 마시고요.
+       기록도 남기지 마세요. <b>그냥 보는 것. 오늘은 그게 다예요.</b></p>
+  </div>
+  <p class="invite">5분 동안은, 그냥 보기만 하세요. 다 보고 난 뒤에 문득 말하고 싶어지면,
+     그때 이 편지에 <b>답장</b>해 주세요.</p>
+</div>
+
+</body>
+</html>
